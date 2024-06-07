@@ -4,7 +4,7 @@ const Path = (props) => (
   <path
     fill="transparent"
     strokeWidth="3"
-    stroke="gray"
+    stroke="#424551"
     strokeLinecap="round"
     {...props}
   />

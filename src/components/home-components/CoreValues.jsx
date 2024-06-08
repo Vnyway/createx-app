@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const CoreValues = () => {
   return (
@@ -9,32 +10,79 @@ const CoreValues = () => {
           Our mission is to set the highest standards for construction sphere.
         </p>
       </div>
-      <div className="flex">
-        <div className="flex flex-col items-center gap-[10px]">
+      <div className="flex justify-center gap-[80px]">
+        <div className="flex flex-col items-center gap-[10px] w-[285px]">
           <img src="./images/ic-like.svg" className="size-[48px]" alt="" />
           <h3 className="font-[700] text-[20px] text-heading">Quality</h3>
-          <p className="font-[400] text-[16px] text-paragraph">
+          <p className="font-[400] text-[16px] text-center text-paragraph">
             Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam
             velit nostrud aliquip sunt.
           </p>
         </div>
-        <div className="flex flex-col items-center gap-[10px]">
+        <div className="flex flex-col items-center gap-[10px] border-r-[1px] border-l-[1px] px-[80px] w-[445px]">
           <img src="./images/ic-hand.svg" className="size-[48px]" alt="" />
           <h3 className="font-[700] text-[20px] text-heading">Safety</h3>
-          <p className="font-[400] text-[16px] text-paragraph">
+          <p className="font-[400] text-[16px] text-center text-paragraph">
             Anim reprehenderit sint voluptate exercitation adipisicing laborum
             adipisicing. Minim empor est ea.
           </p>
         </div>
-        <div className="flex flex-col items-center gap-[10px]">
+        <div className="flex flex-col items-center gap-[10px] w-[285px]">
           <img src="./images/ic-slippers.svg" className="size-[48px]" alt="" />
           <h3 className="font-[700] text-[20px] text-heading">Comfort</h3>
-          <p className="font-[400] text-[16px] text-paragraph">
+          <p className="font-[400] text-[16px] text-center text-paragraph">
             Sit veniam aute dolore adipisicing nulla sit culpa. Minim mollit
             voluptate ullamco proident ea ad.
           </p>
         </div>
       </div>
+      <form
+        action="#"
+        className="flex flex-col gap-[30px] my-[80px] bg-white shadow-md p-[40px] rounded-[4px]">
+        <h3 className="text-center font-[700] text-[28px] text-heading mb-[20px]">
+          Want to know more? Ask us a question:
+        </h3>
+        <div className="flex gap-[20px]">
+          <label className="w-[24%] flex flex-col gap-[5px]">
+            <span className="font-[400] text-[14px] text-customGray">Name</span>
+            <input
+              className="outline-primary border-[#D7DADD] border-[1px] bg-[#F4F5F6] p-[15px] rounded-[4px] h-[44px]"
+              type="text"
+              placeholder="Your name"
+            />
+          </label>
+          <label className="w-[24%] flex flex-col gap-[5px]">
+            <span className="font-[400] text-[14px] text-customGray">
+              Phone
+            </span>
+            <input
+              className="outline-primary border-[#D7DADD] border-[1px] bg-[#F4F5F6] p-[15px] rounded-[4px] h-[44px]"
+              type="tel"
+              placeholder="Your phone"
+            />
+          </label>
+          <label className="w-[49%] flex flex-col gap-[5px]">
+            <span className="font-[400] text-[14px] text-customGray">
+              Message
+            </span>
+            <input
+              className="outline-primary border-[#D7DADD] border-[1px] bg-[#F4F5F6] p-[15px] rounded-[4px] h-[44px]"
+              type="text"
+              placeholder="Your message"
+            />
+          </label>
+          <motion.button
+            className="bg-primary px-[32px] py-[20px] h-[44px] flex items-center mt-[26px] rounded-[4px] font-[700] text-[14px] text-[#FFFFFF] border-primary border-[1px]"
+            whileHover={{
+              backgroundColor: "#FFFFFF",
+              color: "#FF5A30",
+              transition: { duration: 0.3 },
+            }}
+            type="submit">
+            SEND
+          </motion.button>
+        </div>
+      </form>
     </section>
   );
 };

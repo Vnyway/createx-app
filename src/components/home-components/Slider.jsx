@@ -88,7 +88,6 @@ const Slider = () => {
         dragConstraints={{ left: 0, right: 0 }}
         style={{ x: dragX, transition: "all ease-out 0.5s" }}
         animate={{ translateX: `-${imageIndex * 100}%` }}
-        transition={{ duration: 1.3, type: "spring" }}
         onDragEnd={onDragEnd}
         className="flex cursor-grab active:cursor-grabbing items-center">
         <Images />

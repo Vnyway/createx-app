@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const OurServices = () => {
   return (
@@ -19,6 +20,7 @@ const OurServices = () => {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-[20px] mt-[80px]">
           <motion.div
+            initial="initial"
             whileHover="hover"
             transition={{ duration: 0.3 }}
             variants={{
@@ -63,6 +65,7 @@ const OurServices = () => {
             </motion.span>
           </motion.div>
           <motion.div
+            initial="initial"
             whileHover="hover"
             transition={{ duration: 0.3 }}
             variants={{
@@ -115,6 +118,7 @@ const OurServices = () => {
             </motion.span>
           </motion.div>
           <motion.div
+            initial="initial"
             whileHover="hover"
             transition={{ duration: 0.3 }}
             variants={{
@@ -167,6 +171,7 @@ const OurServices = () => {
             </motion.span>
           </motion.div>
           <motion.div
+            initial="initial"
             whileHover="hover"
             transition={{ duration: 0.3 }}
             variants={{
@@ -199,11 +204,20 @@ const OurServices = () => {
             </motion.span>
           </motion.div>
         </div>
-        <div className="flex justify-center gap-[40px]">
+        <div className="flex justify-center items-center gap-[40px] py-[80px]">
           <h3 className="font-[700] text-[28px] text-heading">
             Learn more about our services
           </h3>
-          <button>View services</button>
+          <motion.button
+            initial="initial"
+            whileHover="hover"
+            variants={{
+              initial: { backgroundColor: "#FF5A30", color: "#FFFFFF" },
+              hover: { backgroundColor: "#FFFFFF", color: "#FF5A30" },
+            }}
+            className="bg-primary border-[1px] border-primary px-[40px] py-[10px] rounded-[4px] font-[700] text-[16px] text-[#FFFFFF] uppercase">
+            <Link to="/services">View services</Link>
+          </motion.button>
         </div>
       </div>
     </section>

@@ -1,24 +1,27 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import LearnMore from "./LearnMore";
 
 const OurServices = () => {
   return (
     <section
-      className="mt-[-150px]"
+      className="mt-[-250px] md:mt-[-150px] pb-[40px] md:pb-[80px]"
       style={{
         backgroundImage: `url("./images/our-services.svg")`,
         backgroundSize: "cover",
       }}>
       <div className="container mx-auto">
-        <div className="pt-[140px] flex flex-col text-center">
-          <h3 className="font-[700] text-[46px] text-heading">Our services</h3>
-          <p className="font-[400] text-[18px] text-paragraph">
+        <div className="pt-[240px] md:pt-[140px] flex flex-col text-center">
+          <h3 className="font-[700] text-[32px] md:text-[46px] text-heading">
+            Our services
+          </h3>
+          <p className="font-[400] text-[14px] md:text-[18px] text-paragraph">
             Createx Construction Bureau is a construction giant with a full
             range of construction services.
           </p>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[20px] mt-[80px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-[40px] md:mt-[80px]">
           <motion.div
             initial="initial"
             whileHover="hover"
@@ -204,21 +207,10 @@ const OurServices = () => {
             </motion.span>
           </motion.div>
         </div>
-        <div className="flex justify-center items-center gap-[40px] py-[80px]">
-          <h3 className="font-[700] text-[28px] text-heading">
-            Learn more about our services
-          </h3>
-          <motion.button
-            initial="initial"
-            whileHover="hover"
-            variants={{
-              initial: { backgroundColor: "#FF5A30", color: "#FFFFFF" },
-              hover: { backgroundColor: "#FFFFFF", color: "#FF5A30" },
-            }}
-            className="bg-primary border-[1px] border-primary px-[40px] py-[10px] rounded-[4px] font-[700] text-[16px] text-[#FFFFFF] uppercase">
-            <Link to="/services">View services</Link>
-          </motion.button>
-        </div>
+        <LearnMore
+          heading="Learn more about our services"
+          button="View services"
+        />
       </div>
     </section>
   );

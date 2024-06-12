@@ -6,20 +6,24 @@ import Work from "./pages/Work";
 import News from "./pages/News";
 import Contacts from "./pages/Contacts";
 import Services from "./pages/Services";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutUs" element={<AboutUs />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/contacts" element={<Contacts />} />
-      </Routes>
-    </BrowserRouter>
+    <main className="overflow-hidden">
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </main>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -47,7 +47,7 @@ const SelectedProjects = () =>
       initial="initial"
       whileHover="hover"
       id={element.id}
-      className="flex flex-col w-1/3 px-[1%] shrink-0">
+      className="flex flex-col w-full md:w-1/3 px-[1%] shrink-0">
       <img src={element.image} className="w-full object-cover" alt="" />
       <motion.div
         variants={{
@@ -58,7 +58,7 @@ const SelectedProjects = () =>
             transition: { duration: 0.3 },
           },
         }}
-        className="flex flex-col gap-[5px] items-center py-[15px] bg-white shadow-md h-[80px] overflow-y-hidden">
+        className="flex flex-col gap-[5px] items-center py-[15px] bg-white shadow-md mb-[5px] h-[80px] overflow-y-hidden">
         <h4 className="font-[700] text-[20px] text-heading">{element.h4}</h4>
         <span className="font-[400] text-[14px] text-paragraph">
           {element.span}
@@ -79,10 +79,16 @@ const SelectedProjects = () =>
 
 const SelectedProjectsSection = () => {
   const [projectIndex, setProjectIndex] = useState(0);
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <section className="container mx-auto py-[80px] overflow-hidden">
-      <div className="px-[1%] relative">
-        <h3 className="font-[700] text-[46px] text-heading max-w-[80%]">
+      <div className="px-[1%] relative pb-[70px] mb-[10px] md:mb-auto md:pb-auto">
+        <h3 className="font-[700] text-[28px] md:text-[46px] text-heading w-full md:w-[80%]">
           Browse our selected projects and learn more about our work
         </h3>
         <motion.button
@@ -129,7 +135,14 @@ const SelectedProjectsSection = () => {
               transition: { duration: 0.3 },
             },
           }}
-          onClick={() => projectIndex < 3 && setProjectIndex((pv) => pv + 1)}
+          onClick={() =>
+            (screenSize < 768 &&
+              projectIndex < 5 &&
+              setProjectIndex((pv) => pv + 1)) ||
+            (screenSize >= 768 &&
+              projectIndex < 3 &&
+              setProjectIndex((pv) => pv + 1))
+          }
           className={`absolute right-0 bottom-[10px] size-[48px] flex justify-center items-center rounded-full ${
             projectIndex < 3 ? "" : "cursor-default"
           }`}>
@@ -155,14 +168,19 @@ const SelectedProjectsSection = () => {
           </svg>
         </motion.button>
       </div>
-      <motion.div
-        style={{ transition: "all ease-out 0.5s" }}
-        animate={{
-          translateX: `-${(projectIndex * 100) / 3}%`,
-        }}
-        className="flex">
-        <SelectedProjects />
-      </motion.div>
+      <div className="overflow-x-hidden">
+        <motion.div
+          style={{ transition: "all ease-out 0.5s" }}
+          animate={{
+            translateX:
+              screenSize < 768
+                ? `-${projectIndex * 100}%`
+                : `-${(projectIndex * 100) / 3}%`,
+          }}
+          className="flex">
+          <SelectedProjects />
+        </motion.div>
+      </div>
       <div className="flex justify-center items-center gap-[40px] pt-[80px]">
         <h3 className="font-[700] text-[28px] text-heading">
           Explore all our works

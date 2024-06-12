@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   return (
     <>
-      <nav className="fixed z-30 top-0 left-0 bottom-0 w-[400px] bg-white pt-[30px] shadow-lg translate-x-[-100%]">
-        <ul className="font-[700] text-[18px] px-[50px] mt-0">
+      <nav className="container ml-auto fixed z-30 top-0 left-0 bottom-0 w-[70%] md:w-[400px] bg-white pt-[30px] shadow-lg translate-x-[-100%]">
+        <ul className="font-[700] text-[18px] mt-0">
           <li>
             <Link to="/">
               <motion.img

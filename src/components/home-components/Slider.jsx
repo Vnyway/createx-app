@@ -16,18 +16,18 @@ const Images = () => {
         }}
         className="aspect-video shrink-0 w-full h-[474px] md:h-[777px] lg:h-[988px]">
         <div className="container mx-auto mt-[20px] md:mt-[100px] lg:mt-[300px] flex flex-col gap-[35px] text-white">
-          <h2 className="flex flex-col text-[72px] font-[700]">
-            <span className="h-[80px]">
+          <h2 className="flex flex-col text-[35px] md:text-[72px] font-[700]">
+            <span className="h-[40px] md:h-[80px]">
               CREATE<span className="text-primary">X</span>
             </span>
-            <span className="h-[80px]">CONSTRUCTION</span>
+            <span className="h-[40px] md:h-[80px]">CONSTRUCTION</span>
           </h2>
-          <p className="max-w-[595px] font-[400] text-[20px]">
+          <p className="max-w-[595px] font-[400] text-[16px] md:text-[20px]">
             Cras ultrices leo vitae non viverra. Fringilla nisi quisque
             consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis
             purus eget pellentesque integer ipsum elementum felis.{" "}
           </p>
-          <div className="flex gap-[20px] font-[700] text-[16px]">
+          <div className="flex flex-col md:flex-row gap-[20px] font-[700] text-[12px] md:text-[16px]">
             <motion.button
               transition={{ duration: 0.3 }}
               whileHover={{
@@ -92,7 +92,7 @@ const Slider = () => {
         className="flex cursor-grab active:cursor-grabbing items-center">
         <Images />
       </motion.div>
-      <div className="absolute  bottom-[15%] left-[0] w-full flex">
+      <div className="absolute hidden md:flex bottom-[15%] left-[0] w-full ">
         <ul className="flex container mx-auto gap-[10px] font-[700] text-[28px] leading-[42px]">
           <li>
             <button
@@ -218,7 +218,7 @@ const Slider = () => {
             backgroundColor: isLeftButtonEnabled ? "#FF5A30" : "#42455180",
           },
         }}
-        className={`absolute size-[48px] rounded-full  flex justify-center items-center top-[50%] translate-y-[-50%] left-[20px] ${
+        className={`hidden min-[1400px]:flex absolute size-[48px] rounded-full justify-center items-center top-[50%] translate-y-[-50%] left-[20px] ${
           imageIndex > 0 ? "bg-white" : "cursor-not-allowed bg-customGray/50"
         }`}>
         <svg
@@ -253,7 +253,7 @@ const Slider = () => {
             backgroundColor: isRightButtonEnabled ? "#FF5A30" : "#42455180",
           },
         }}
-        className={`absolute size-[48px] rounded-full  flex justify-center items-center top-[50%] translate-y-[-50%] right-[20px] ${
+        className={`absolute hidden min-[1400px]:flex size-[48px] rounded-full justify-center items-center top-[50%] translate-y-[-50%] right-[20px] ${
           imageIndex < 3 ? "bg-white" : "cursor-not-allowed bg-customGray/50"
         }`}>
         <svg

@@ -45,8 +45,14 @@ const Menu = () => {
             <Link to="/contacts">Contacts</Link>
           </motion.li>
           <li>
-            <Link to="/contacts" className="flex gap-[10px] py-[15px]">
-              <img src="./images/phone.svg" alt="" />
+            <Link
+              to="/contacts"
+              className="flex flex-col md:flex-row gap-[10px] py-[15px]">
+              <img
+                src="./images/phone.svg"
+                alt=""
+                className="w-[40px] md:w-auto"
+              />
               <motion.div
                 whileHover={{ color: "#FF5A30", transition: { duration: 0.3 } }}
                 className="flex flex-col">
@@ -58,8 +64,14 @@ const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/contacts" className="flex gap-[10px] py-[15px]">
-              <img src="./images/chat.svg" alt="" />
+            <Link
+              to="/contacts"
+              className="flex flex-col md:flex-row gap-[10px] py-[15px]">
+              <img
+                src="./images/chat.svg"
+                alt=""
+                className="w-[40px] md:w-auto"
+              />
               <motion.div
                 whileHover={{ color: "#FF5A30", transition: { duration: 0.3 } }}
                 className="flex flex-col">

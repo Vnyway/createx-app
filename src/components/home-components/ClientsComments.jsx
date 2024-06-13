@@ -60,34 +60,46 @@ const ClientsComments = () => {
   return (
     <section className="bg-[#F4F5F6]">
       <div className="container mx-auto py-[80px]">
-        <h3 className="text-center font-[700] text-[46px] text-heading">
+        <h3 className="text-center font-[700] text-[28px] md:text-[46px] text-heading">
           Supported by 12+ partners
         </h3>
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-[40px] mt-[40px] mb-[80px]">
-          <img src="./images/partners/in-depth-consulting.svg" alt="" />
-          <img src="./images/partners/higher-fit.svg" alt="" />
-          <img src="./images/partners/sentinal-consulting.svg" alt="" />
-          <img src="./images/partners/happy-home.svg" alt="" />
-          <img src="./images/partners/for-sale.svg" alt="" />
-          <img src="./images/partners/sunset-realty.svg" alt="" />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[40px] mt-[40px] mb-[80px]">
+          <div className="flex items-center justify-center">
+            <img src="./images/partners/in-depth-consulting.svg" alt="" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="./images/partners/higher-fit.svg" alt="" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="./images/partners/sentinal-consulting.svg" alt="" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="./images/partners/happy-home.svg" alt="" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="./images/partners/for-sale.svg" alt="" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="./images/partners/sunset-realty.svg" alt="" />
+          </div>
         </div>
-        <div className="flex">
-          <div className="w-[70%] mr-[50px]">
-            <h3 className="font-[700] text-[46px] text-heading mb-[80px]">
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-[70%] md:mr-[50px]">
+            <h3 className="font-[700] text-[28px] md:text-[36px] lg:text-[46px] text-heading mb-[40px] md:mb-[80px]">
               What our clients are saying
             </h3>
-            <div className="relative w-full max-h-[260px] overflow-hidden">
+            <div className="relative w-full overflow-x-hidden">
               <motion.div
                 style={{ transition: "all ease-out 0.5s" }}
                 animate={{ translateX: `-${customerIndex * 100}%` }}
-                className="flex items-center">
+                className="flex items-center mb-[40px] md:mb-0">
                 <Comments />
               </motion.div>
               <motion.button
                 initial="initial"
                 whileHover="hover"
                 variants={{
-                  initial: { backgroundColor: "#F4F5F6" },
+                  initial: { backgroundColor: "#ffffff4d" },
                   hover: {
                     backgroundColor: customerIndex > 0 ? "#FF5A30" : "#F4F5F6",
                     transition: { duration: 0.3 },
@@ -96,7 +108,7 @@ const ClientsComments = () => {
                 onClick={() =>
                   customerIndex > 0 && setCustomerIndex((pv) => pv - 1)
                 }
-                className={`absolute right-[55px] bottom-0 size-[48px] flex justify-center items-center rounded-full ${
+                className={`absolute right-[55px] bottom-[60px] md:bottom-0 size-[48px] flex justify-center items-center rounded-full ${
                   customerIndex > 0 ? "" : "cursor-default"
                 }`}>
                 <svg
@@ -123,7 +135,7 @@ const ClientsComments = () => {
                 initial="initial"
                 whileHover="hover"
                 variants={{
-                  initial: { backgroundColor: "#F4F5F6" },
+                  initial: { backgroundColor: "#ffffff4d" },
                   hover: {
                     backgroundColor: customerIndex < 3 ? "#FF5A30" : "#F4F5F6",
                     transition: { duration: 0.3 },
@@ -132,7 +144,7 @@ const ClientsComments = () => {
                 onClick={() =>
                   customerIndex < 3 && setCustomerIndex((pv) => pv + 1)
                 }
-                className={`absolute right-0 bottom-0 size-[48px] flex justify-center items-center rounded-full ${
+                className={`absolute right-0 bottom-[60px] md:bottom-0 size-[48px] flex justify-center items-center rounded-full ${
                   customerIndex < 3 ? "" : "cursor-default"
                 }`}>
                 <svg

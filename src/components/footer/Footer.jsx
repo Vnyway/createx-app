@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import InputError from "../home-components/InputError";
 
 const Footer = () => {
+  const form = useForm({
+    defaultValues: {
+      email: "",
+    },
+  });
+  const { register, formState, handleSubmit, reset } = form;
+  const { errors, isSubmitSuccessful } = formState;
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful]);
   return (
     <footer className="bg-heading">
-      <div className="container mx-auto py-[80px]">
-        <div className="flex gap-[10%] items-start">
-          <div className="w-[50%] flex flex-col gap-[40px]">
-            <div className="flex gap-[80px] items-center">
+      <div className="container mx-auto py-[35px] md:py-[80px]">
+        <div className="flex flex-col md:flex-row gap-[10%] items-start">
+          <div className="w-full md:w-[50%] flex flex-col gap-[20px]">
+            <div className="flex flex-col md:flex-row gap-[20px] md:gap-[80px] md:items-center">
               <Link to="/">
                 <motion.img
                   src="./images/logo-white.svg"
@@ -18,7 +35,7 @@ const Footer = () => {
                   transition={{ duration: 0.3 }}
                 />
               </Link>
-              <div className="flex gap-[15px]">
+              <div className="flex gap-[10px] md:gap-[15px]">
                 <motion.svg
                   initial="initial"
                   whileHover="hover"
@@ -127,15 +144,29 @@ const Footer = () => {
               the highest standards for construction sphere.
             </p>
           </div>
-          <form action="#" className="w-[40%] flex flex-col mt-[-9px]">
-            <h3 className="font-[700] text-[24px] mb-[40px] text-[#FFFFFF]">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="w-full md:w-[40%] flex flex-col mt-[11px] md:mt-[-9px]">
+            <h3 className="font-[700] text-[24px] mb-[20px] md:mb-[40px] text-[#FFFFFF]">
               Let’s stay in touch
             </h3>
-            <div className="h-[44px] w-full flex">
+            <div className="h-[44px] relative w-full flex">
+              <div className="absolute top-[-34px]">
+                <InputError message={errors.email?.message} />
+              </div>
               <input
                 type="text"
                 placeholder="Your email address "
                 className="h-full outline-primary px-[15px] w-[65%] bg-white bg-opacity-[12%] rounded-l-[4px] border-[1px] border-white border-opacity-[20%]"
+                id="email"
+                {...register("email", {
+                  required: { value: true, message: "Required" },
+                  pattern: {
+                    value:
+                      /^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: "Invalid email",
+                  },
+                })}
               />
               <motion.button
                 initial={{ backgroundColor: "#FF5A30" }}
@@ -155,9 +186,9 @@ const Footer = () => {
             </label>
           </form>
         </div>
-        <div className="flex gap-[10%] mt-[60px]">
-          <div className="flex justify-between w-[50%]">
-            <div className="flex flex-col gap-[10px] text-white text-opacity-60">
+        <div className="flex flex-col md:flex-row gap-[10%] mt-[20px] md:mt-[60px]">
+          <div className="flex flex-col md:flex-row md:justify-between w-full md:w-[50%]">
+            <div className="flex flex-col mb-[20px] md:mb-0 gap-[10px] text-white text-opacity-60">
               <h4 className="font-[700] text-[16px] text-white">HEAD OFFICE</h4>
               <div className="flex flex-col gap-[5px]">
                 <p>
@@ -190,7 +221,7 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-[10px] text-white text-opacity-60">
+            <div className="flex flex-col mb-[20px] md:mb-0 gap-[10px] text-white text-opacity-60">
               <h4 className="font-[700] text-[16px] text-white">WHO WE ARE</h4>
               <div className="flex flex-col gap-[5px]">
                 <Link to="/aboutUs">
@@ -256,7 +287,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-[5px] text-white text-opacity-60 mt-[60px]">
+        <div className="flex flex-wrap md:flex-nowrap items-center gap-[5px] text-white text-opacity-60 mt-[20px] md:mt-[60px]">
           <span>© All rights reserved. Made with</span>
           <img src="./images/footer/heart.svg" alt="heart" />
           <span>by Createx Studio </span>

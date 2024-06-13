@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import InputError from "./InputError";
 
 const CoreValues = () => {
+  const form = useForm({
+    defaultValues: {
+      name: "",
+      phone: "",
+      message: "",
+    },
+  });
+  const { register, formState, handleSubmit, reset } = form;
+  const { errors, isSubmitSuccessful } = formState;
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful]);
   return (
     <section className="container mx-auto flex flex-col mt-[40px] md:mt-[80px]">
       <div className="text-center mb-[20px]">
@@ -51,38 +70,72 @@ const CoreValues = () => {
         </div>
       </div>
       <form
-        action="#"
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-[30px] my-[40px] md:my-[80px] bg-white shadow-md p-[20px] md:p-[40px] rounded-[4px]">
         <h3 className="text-center font-[700] text-[18px] md:text-[28px] text-heading mb-0 md:mb-[20px]">
           Want to know more? Ask us a question:
         </h3>
         <div className="flex flex-col md:flex-row gap-[10px] md:gap-[20px]">
-          <label className="w-full md:w-[24%] flex flex-col gap-[5px]">
-            <span className="font-[400] text-[14px] text-customGray">Name</span>
+          <label
+            htmlFor="name"
+            className="w-full md:w-[24%] flex flex-col gap-[5px]">
+            <div className="flex justify-between">
+              <span className="font-[400] text-[14px] text-customGray">
+                Name
+              </span>
+              <InputError message={errors.name?.message} />
+            </div>
             <input
               className="outline-primary border-[#D7DADD] border-[1px] bg-[#F4F5F6] p-[15px] rounded-[4px] h-[44px]"
               type="text"
               placeholder="Your name"
+              id="name"
+              {...register("name", {
+                required: { value: true, message: "Required" },
+              })}
             />
           </label>
-          <label className="w-full md:w-[24%] flex flex-col gap-[5px]">
-            <span className="font-[400] text-[14px] text-customGray">
-              Phone
-            </span>
+          <label
+            htmlFor="phone"
+            className="w-full md:w-[24%] flex flex-col gap-[5px]">
+            <div className="flex justify-between">
+              <span className="font-[400] text-[14px] text-customGray">
+                Phone
+              </span>
+              <InputError message={errors.phone?.message} />
+            </div>
             <input
               className="outline-primary border-[#D7DADD] border-[1px] bg-[#F4F5F6] p-[15px] rounded-[4px] h-[44px]"
               type="tel"
               placeholder="Your phone"
+              id="phone"
+              {...register("phone", {
+                required: { value: true, message: "Required" },
+                pattern: {
+                  value: /^\+?\d{7,15}$/,
+                  message: "Invalid number",
+                },
+              })}
             />
           </label>
-          <label className="w-full md:w-[34%] flex flex-col gap-[5px]">
-            <span className="font-[400] text-[14px] text-customGray">
-              Message
-            </span>
+          <label
+            htmlFor="message"
+            className="w-full md:w-[34%] flex flex-col gap-[5px]">
+            <div className="flex justify-between">
+              <span className="font-[400] text-[14px] text-customGray">
+                Message
+              </span>
+              <InputError message={errors.message?.message} />
+            </div>
             <input
               className="outline-primary border-[#D7DADD] border-[1px] bg-[#F4F5F6] p-[15px] rounded-[4px] h-[44px]"
               type="text"
               placeholder="Your message"
+              id="message"
+              {...register("message", {
+                required: { value: true, message: "Required" },
+                minLength: { value: 9, message: "Too short" },
+              })}
             />
           </label>
           <motion.button

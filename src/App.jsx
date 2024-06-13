@@ -10,7 +10,6 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <main className="overflow-hidden">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -23,7 +22,6 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </main>
   );
 }
 

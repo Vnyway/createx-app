@@ -29,7 +29,7 @@ const news = [
 ];
 
 const NewsCharacteristics = ({ category, date, commentsCount }) => (
-  <div className="flex gap-[10px] font-[400] text-[14px] text-wrap text-paragraph items-center">
+  <div className="flex gap-[10px] font-[400] text-[10px] md:text-[14px] text-wrap text-paragraph items-center">
     <span>{category}</span>
     <span className="border-r-[1px] border-l-[1px] px-[10px] border-paragraph">
       {date}
@@ -62,7 +62,7 @@ const RecentNews = ({
           initial: { color: "#1E212C" },
           hover: { color: "#FF5A30", transition: { duration: 0.3 } },
         }}
-        className="font-[700] text-[20px] text-heading">
+        className="font-[700] text-[18px] md:text-[20px] text-heading">
         {h3}
       </motion.h3>
       <NewsCharacteristics
@@ -70,7 +70,9 @@ const RecentNews = ({
         date={date}
         commentsCount={commentsCount}
       />
-      {description && <p>{description}</p>}
+      {description && (
+        <p className="font-[400] text-[14px] md:text-[16px]">{description}</p>
+      )}
     </div>
   </motion.div>
 );
@@ -83,12 +85,12 @@ const FactsAndNewsSection = () => {
         className="w-[1065.95px] h-auto absolute -z-20 left-[-300px] top-[-380px]"
         alt=""
       />
-      <div className="container mx-auto my-[80px]">
+      <div className="container mx-auto my-[40px] md:my-[80px]">
         <div className="flex flex-col items-center text-heading">
-          <h3 className="font-[700] text-[46px] mb-[60px]">
+          <h3 className="font-[700] text-[28px] md:text-[46px] text-center mb-[40px] md:mb-[60px]">
             Some facts and figures
           </h3>
-          <ul className="flex gap-[60px]">
+          <ul className="flex flex-col md:flex-row gap-[40px] md:gap-[60px]">
             <li className="flex flex-col gap-[20px] items-center">
               <div className="relative size-[148px] flex justify-center items-center">
                 <div className="absolute -z-10 size-full rounded-full border-[6px] border-[#F89828] border-opacity-30"></div>
@@ -143,12 +145,12 @@ const FactsAndNewsSection = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col mt-[80px]">
-          <h3 className="text-center font-[700] text-[46px] text-heading mb-[40px]">
+        <div className="flex flex-col mt-[40px] md:mt-[80px]">
+          <h3 className="text-center font-[700] text-[28px] md:text-[46px] text-heading mb-[40px]">
             Recent news
           </h3>
-          <div className="grid grid-cols-5 gap-[20px]">
-            <div className="row-span-2 col-span-3">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-[20px]">
+            <div className="md:row-span-2 md:col-span-3">
               <RecentNews
                 h3={news[0].h3}
                 img={news[0].img}
@@ -158,7 +160,7 @@ const FactsAndNewsSection = () => {
                 description={news[0].description}
               />
             </div>
-            <div className="col-span-2">
+            <div className="md:col-span-2">
               <RecentNews
                 h3={news[1].h3}
                 img={news[1].img}
@@ -168,7 +170,7 @@ const FactsAndNewsSection = () => {
                 description={news[1].description}
               />
             </div>
-            <div className="col-span-2">
+            <div className="md:col-span-2">
               <RecentNews
                 h3={news[2].h3}
                 img={news[2].img}

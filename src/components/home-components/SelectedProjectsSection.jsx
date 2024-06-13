@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import LearnMore from "./LearnMore";
 
 const projects = [
   {
@@ -86,8 +87,8 @@ const SelectedProjectsSection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <section className="container mx-auto py-[80px] overflow-hidden">
-      <div className="px-[1%] relative pb-[70px] mb-[10px] md:mb-auto md:pb-auto">
+    <section className="container mx-auto py-[40px] md:py-[80px] overflow-hidden">
+      <div className="px-[1%] relative md:pb-0 pb-[70px] mb-[10px] ">
         <h3 className="font-[700] text-[28px] md:text-[46px] text-heading w-full md:w-[80%]">
           Browse our selected projects and learn more about our work
         </h3>
@@ -181,21 +182,7 @@ const SelectedProjectsSection = () => {
           <SelectedProjects />
         </motion.div>
       </div>
-      <div className="flex justify-center items-center gap-[40px] pt-[80px]">
-        <h3 className="font-[700] text-[28px] text-heading">
-          Explore all our works
-        </h3>
-        <motion.button
-          initial="initial"
-          whileHover="hover"
-          variants={{
-            initial: { backgroundColor: "#FF5A30", color: "#FFFFFF" },
-            hover: { backgroundColor: "#FFFFFF", color: "#FF5A30" },
-          }}
-          className="bg-primary border-[1px] border-primary px-[40px] py-[10px] rounded-[4px] font-[700] text-[16px] text-[#FFFFFF] uppercase">
-          <Link to="/work">View portfolio</Link>
-        </motion.button>
-      </div>
+      <LearnMore heading="Explore all our works" button="View portfolio" />
     </section>
   );
 };

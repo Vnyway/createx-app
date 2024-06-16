@@ -7,7 +7,7 @@ import News from "./pages/News";
 import Contacts from "./pages/Contacts";
 import Services from "./pages/Services";
 import Footer from "./components/footer/Footer";
-import Service from "./components/service-info-components/Service";
+import Service from "./pages/Service";
 
 function App() {
   return (

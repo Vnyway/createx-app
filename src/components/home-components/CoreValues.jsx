@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import InputError from "./InputError";
+import InputError from "../general-components/InputError";
 
 const CoreValues = () => {
   const form = useForm({

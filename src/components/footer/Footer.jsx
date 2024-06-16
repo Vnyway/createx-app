@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import InputError from "../home-components/InputError";
+import InputError from "../general-components/InputError";
 
 const Footer = () => {
   const form = useForm({

@@ -6,7 +6,7 @@ import OurServices from "../components/home-components/OurServices";
 import SelectedProjectsSection from "../components/home-components/SelectedProjectsSection";
 import ClientsComments from "../components/home-components/ClientsComments";
 import FactsAndNewsSection from "../components/home-components/FactsAndNewsSection";
-import DiscussDetails from "../components/home-components/DiscussDetails";
+import DiscussDetails from "../components/general-components/DiscussDetails";
 
 const Home = () => {
   return (

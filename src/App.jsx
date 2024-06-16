@@ -7,21 +7,23 @@ import News from "./pages/News";
 import Contacts from "./pages/Contacts";
 import Services from "./pages/Services";
 import Footer from "./components/footer/Footer";
+import Service from "./components/service-info-components/Service";
 
 function App() {
   return (
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/contacts" element={<Contacts />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/:serviceId" element={<Service />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

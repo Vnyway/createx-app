@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import PageTopSection from "../components/general-components/PageTopSection";
 import { useParams } from "react-router-dom";
 import ServiceOfferings from "../components/service-info-components/ServiceOfferings";
-import ServiceBenefits from "../components/service-info-components/ServiceBenefits";
+import CoreValues from "../components/general-components/CoreValues";
+import SelectedProjectsSection from "../components/general-components/SelectedProjectsSection";
+import Pricing from "../components/service-info-components/Pricing";
+import SupportedSection from "../components/general-components/SupportedSection";
+import DiscussDetails from "../components/general-components/DiscussDetails";
 
 const services = [
   {
@@ -375,6 +379,69 @@ const services = [
   },
 ];
 
+const features = [
+  {
+    id: 1,
+    image: "./images/service/ic-contract.svg",
+    name: "Fixed Terms & Cost",
+    description:
+      "Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit nostrud aliquip sunt.",
+  },
+  {
+    id: 2,
+    image: "./images/service/ic-helmet.svg",
+    name: "Qualified Workers",
+    description:
+      "Anim reprehenderit sint voluptate exercitation adipisicing laborum adipisicing. Minim empor est ea.",
+  },
+  {
+    id: 3,
+    image: "./images/service/ic-camera.svg",
+    name: "Supervision & Control",
+    description:
+      "Sit veniam aute dolore adipisicing nulla sit culpa. Minim mollit voluptate ullamco proident ea ad.",
+  },
+];
+
+const projects = [
+  {
+    id: 1,
+    image: "./images/service/projects/kids-bedroom.svg",
+    h4: "Scandinavian Interior",
+    span: "Private houses",
+  },
+  {
+    id: 2,
+    image: "./images/service/projects/scandinavian-interior.svg",
+    h4: "Kids Bedroom",
+    span: "Apartments & flats",
+  },
+  {
+    id: 3,
+    image: "./images/service/projects/kids-bedroom.svg",
+    h4: "Scandinavian Interior",
+    span: "Private houses",
+  },
+  {
+    id: 4,
+    image: "./images/service/projects/scandinavian-interior.svg",
+    h4: "Kids Bedroom",
+    span: "Apartments & flats",
+  },
+  {
+    id: 5,
+    image: "./images/service/projects/kids-bedroom.svg",
+    h4: "Scandinavian Interior",
+    span: "Private houses",
+  },
+  {
+    id: 6,
+    image: "./images/service/projects/scandinavian-interior.svg",
+    h4: "Kids Bedroom",
+    span: "Apartments & flats",
+  },
+];
+
 const Service = () => {
   const { serviceId } = useParams();
   console.log(serviceId);
@@ -392,7 +459,21 @@ const Service = () => {
         background="./images/service/background.svg"
       />
       <ServiceOfferings data={data} />
-      <ServiceBenefits />
+      <CoreValues
+        isButton={true}
+        background="dark"
+        heading="Our benefits"
+        paragraph="Our mission is to set the highest standards for construction sphere."
+        features={features}
+      />
+      <SelectedProjectsSection
+        heading="Related projects"
+        projects={projects}
+        marginTop={true}
+      />
+      <Pricing />
+      <SupportedSection paddingBot={true} />
+      <DiscussDetails />
     </main>
   );
 };

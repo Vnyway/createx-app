@@ -51,7 +51,7 @@ const CoreValues = ({
           </p>
         </div>
         <div
-          className={`flex flex-col md:flex-row md:justify-center gap-[30px] md:gap-[30px] my-[60px] lg:gap-[80px] ${
+          className={`flex flex-col md:flex-row md:justify-center gap-[30px] md:gap-[30px] my-[30px] md:my-[60px] lg:gap-[80px] ${
             background === "dark"
               ? "text-white text-opacity-60"
               : "text-paragraph"
@@ -187,7 +187,7 @@ const CoreValues = ({
           <div className="w-full flex justify-center">
             <motion.button
               initial={{ backgroundColor: "#FF5A30", color: "#FFFFFF" }}
-              whileHover={{ backgroundColor: "#FFFFFF00", color: "#FF5A30" }}
+              whileHover={{ backgroundColor: "#1E212C", color: "#FF5A30" }}
               transition={{ duration: 0.3 }}
               className="uppercase w-[390px] h-[52px] flex justify-center items-center font-[700] text-[16px] border-[1px] border-primary rounded-[4px] mt-[60px]">
               Discuss a project

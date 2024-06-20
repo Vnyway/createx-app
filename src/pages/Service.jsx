@@ -11,7 +11,7 @@ import DiscussDetails from "../components/general-components/DiscussDetails";
 const services = [
   {
     id: 1,
-    name: "Interior Design",
+    name: "Construction",
     description:
       "Dui augue nec mi mi. Ut ac lectus donec fames pellentesque. Laoreet aenean vulputate elementum blandit amet.",
     slider: [
@@ -103,7 +103,7 @@ const services = [
   },
   {
     id: 2,
-    name: "Interior Design",
+    name: "Project development",
     description:
       "Dui augue nec mi mi. Ut ac lectus donec fames pellentesque. Laoreet aenean vulputate elementum blandit amet.",
     slider: [
@@ -287,7 +287,7 @@ const services = [
   },
   {
     id: 4,
-    name: "Interior Design",
+    name: "Repairs",
     description:
       "Dui augue nec mi mi. Ut ac lectus donec fames pellentesque. Laoreet aenean vulputate elementum blandit amet.",
     slider: [

@@ -10,7 +10,7 @@ const PageTopSection = ({ background, heading, paragraph, path }) => {
         backgroundRepeat: "no-repeat",
       }}
       className="h-[400px] md:h-[600px] mt-[-80px] bg-[#F4F5F6] flex items-center">
-      <div className="container mx-auto flex flex-col gap-[10px] md:gap-[20px]">
+      <div className="container mx-auto flex flex-col gap-[10px] md:gap-[20px] mt-[30px] md:mt-0">
         {path && path.length > 0 && (
           <div>
             {path.map((element, id) => {

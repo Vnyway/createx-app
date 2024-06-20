@@ -54,18 +54,12 @@ const Services = () => {
             <p className="font-[400] text-[16px] text-paragraph">
               {element.paragraph}
             </p>
-            <motion.button
-              initial="initial"
-              whileHover="hover"
-              variants={{
-                initial: { backgroundColor: "#FFFFFF", color: "#FF5A30" },
-                hover: { backgroundColor: "#FF5A30", color: "#FFFFFF" },
-              }}
-              className="bg-primary max-w-full md:max-w-[160px] mt-[10px] border-[1px] border-primary py-[10px] rounded-[4px] font-[700] text-[14px] text-[#FFFFFF] uppercase">
-              <Link to={`/${element.id}`} className="w-full h-full">
-                Learn more
-              </Link>
-            </motion.button>
+            <Link
+              to={`/${element.id}`}
+              onClick={() => window.scrollTo(0, 0)}
+              className="hover:bg-primary bg-white max-w-full md:max-w-[160px] mt-[10px] border-[1px] border-primary py-[10px] rounded-[4px] font-[700] text-[14px] text-primary hover:text-white transition-all duration-300 uppercase flex justify-center items-center">
+              Learn more
+            </Link>
           </div>
         </div>
       );
@@ -81,16 +75,12 @@ const Services = () => {
             <p className="font-[400] text-[16px] text-paragraph">
               {element.paragraph}
             </p>
-            <motion.button
-              initial="initial"
-              whileHover="hover"
-              variants={{
-                initial: { backgroundColor: "#FFFFFF", color: "#FF5A30" },
-                hover: { backgroundColor: "#FF5A30", color: "#FFFFFF" },
-              }}
-              className="bg-primary max-w-full md:max-w-[160px] mt-[10px] border-[1px] border-primary py-[10px] rounded-[4px] font-[700] text-[14px] text-[#FFFFFF] uppercase">
+            <Link
+              to={`/${element.id}`}
+              onClick={() => window.scrollTo(0, 0)}
+              className="hover:bg-primary bg-white max-w-full md:max-w-[160px] mt-[10px] border-[1px] border-primary py-[10px] rounded-[4px] font-[700] text-[14px] text-primary hover:text-white transition-all duration-300 uppercase flex justify-center items-center">
               Learn more
-            </motion.button>
+            </Link>
           </div>
           <img src={element.image} alt="" className="w-full md:w-[50%]" />
         </div>

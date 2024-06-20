@@ -1,35 +1,34 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const ServiceFeatures = ({ data }) => {
-  const [descriptionOpened, setDescriptionOpened] = useState(0);
+const ServiceFeatures = ({ data, descriptionOpened, setDescriptionOpened }) => {
   const handleToggle = (id) => {
     if (descriptionOpened === id) {
       setDescriptionOpened(0);
-      console.log(descriptionOpened);
     } else {
       setDescriptionOpened(id);
-      console.log(descriptionOpened);
     }
   };
 
   return data.slider.map((element) => {
     return (
-      <div className="w-full shrink-0 flex gap-[60px]">
+      <div className="w-full shrink-0 flex flex-col md:flex-row gap-[20px] md:gap-[60px]">
         <img
           onDragStart={(e) => e.preventDefault()}
           src={element.image}
           alt={element.name}
-          className="w-[50%]"
+          className="w-full md:w-[50%]"
         />
-        <div className="flex flex-col w-[50%] justify-center gap-[20px]">
-          <h2 className="font-[700] text-[46px] text-heading">We offer</h2>
+        <div className="flex flex-col w-full md:w-[50%] justify-center gap-[10px] md:gap-[20px]">
+          <h2 className="font-[700] text-[30px] md:text-[46px] text-heading">
+            We offer
+          </h2>
           {element.offerings.map((offering) => {
             return (
               <div className="flex items-start gap-[20px]">
                 <button
                   onClick={() => handleToggle(offering.id)}
-                  className="relative size-[22px] shrink-0 mt-[12px]">
+                  className="relative size-[22px] shrink-0 mt-[5px] md:mt-[10px]">
                   <svg
                     width="22"
                     height="2"
@@ -64,14 +63,16 @@ const ServiceFeatures = ({ data }) => {
                     />
                   </svg>
                 </button>
-                <motion.div
-                  className={`${
-                    descriptionOpened === offering.id ? "h-[179px]" : "h-[80px]"
-                  } overflow-hidden flex-col gap-[200px] transition-all duration-300 ease-out`}>
-                  <h3 className="font-[700] text-[28px] text-heading">
+
+                <motion.div className={` overflow-hidden flex-col gap-[200px]`}>
+                  <h3 className="font-[700] text-[20px] md:text-[28px] text-heading">
                     {offering.name}
                   </h3>
-                  <p className={` font-[400] text-[16px] text-paragraph`}>
+                  <p
+                    style={{ transition: "all .3s ease-out" }}
+                    className={`${
+                      descriptionOpened === offering.id ? "h-[98px]" : "h-0"
+                    } font-[400] text-[12px] md:text-[16px] text-paragraph`}>
                     {offering.description}
                   </p>
                 </motion.div>

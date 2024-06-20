@@ -7,17 +7,22 @@ const featureIndexes = [0, 1, 2, 3];
 const ServiceOfferings = ({ data }) => {
   const [featureIndex, setFeatureIndex] = useState(0);
   const dragX = useMotionValue(0);
+
+  const [descriptionOpened, setDescriptionOpened] = useState(0);
+
   const onDragEnd = () => {
     const x = dragX.get();
     if (x <= -50 && featureIndex < featureIndexes.length - 1) {
       setFeatureIndex((pv) => pv + 1);
+      setDescriptionOpened(0);
     } else if (x >= 50 && featureIndex > 0) {
       setFeatureIndex((pv) => pv - 1);
+      setDescriptionOpened(0);
     }
   };
   return (
     <section className="container mx-auto py-[60px]">
-      <div className="overflow-x-hidden">
+      <div className="overflow-hidden">
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
@@ -25,14 +30,18 @@ const ServiceOfferings = ({ data }) => {
           animate={{ translateX: `-${featureIndex * 100}%` }}
           onDragEnd={onDragEnd}
           className="flex cursor-grab active:cursor-grabbing items-center">
-          <ServiceFeatures data={data} />
+          <ServiceFeatures
+            data={data}
+            descriptionOpened={descriptionOpened}
+            setDescriptionOpened={setDescriptionOpened}
+          />
         </motion.div>
       </div>
-      <div className="flex flex-col mt-[60px]">
+      <div className="hidden md:flex flex-col mt-[60px]">
         <h2 className="font-[700] text-[46px] text-heading mb-[40px]">
           That’s how we do it
         </h2>
-        <div className="flex">
+        <div className="flex px-[10px]">
           <div className="flex flex-col gap-[10px] w-[25%]">
             <div className="relative">
               <button
@@ -57,11 +66,11 @@ const ServiceOfferings = ({ data }) => {
               </button>
               <div className="absolute top-[50%] translate-y-[50%] left-[83px] right-[33px] -z-10 h-0 w-auto border-[1px] border-dashed border-[#D7DADD]"></div>
             </div>
-            <div className="pr-[33px]">
-              <h4 className="font-[700] text-[20px] text-heading">
+            <div className="pr-[33px] flex flex-col gap-[10px]">
+              <h4 className="font-[700] text-[18px] lg:text-[20px] text-heading">
                 Work Estimate
               </h4>
-              <p className="font-[400] text-[16px] text-paragraph">
+              <p className="font-[400] text-[15px] lg:text-[16px] text-paragraph">
                 Culpa nostrud commodo ea consequat aliquip reprehenderit.
               </p>
             </div>
@@ -90,9 +99,11 @@ const ServiceOfferings = ({ data }) => {
               </button>
               <div className="absolute top-[50%] translate-y-[50%] left-[83px] right-[33px] -z-10 h-0 w-auto border-[1px] border-dashed border-[#D7DADD]"></div>
             </div>
-            <div className="pr-[33px]">
-              <h4 className="font-[700] text-[20px] text-heading">Contract</h4>
-              <p className="font-[400] text-[16px] text-paragraph">
+            <div className="pr-[33px] flex flex-col gap-[10px]">
+              <h4 className="font-[700] text-[18px] lg:text-[20px] text-heading">
+                Contract
+              </h4>
+              <p className="font-[400] text-[15px] lg:text-[16px] text-paragraph">
                 Laoreet ultrices curabitur luctus quisque consequat. Leo lorem
                 velit imperdiet auctor et tempor.
               </p>
@@ -122,11 +133,11 @@ const ServiceOfferings = ({ data }) => {
               </button>
               <div className="absolute top-[50%] translate-y-[50%] left-[83px] right-[33px] -z-10 h-0 w-auto border-[1px] border-dashed border-[#D7DADD]"></div>
             </div>
-            <div className="pr-[33px]">
-              <h4 className="font-[700] text-[20px] text-heading">
-                Mobilization{" "}
+            <div className="pr-[33px] flex flex-col gap-[10px]">
+              <h4 className="font-[700] text-[18px] lg:text-[20px] text-heading">
+                Mobilization
               </h4>
-              <p className="font-[400] text-[16px] text-paragraph">
+              <p className="font-[400] text-[15px] lg:text-[16px] text-paragraph">
                 Odio massa scelerisque purus arcu sed velit eleifend cursus leo.
               </p>
             </div>
@@ -154,11 +165,11 @@ const ServiceOfferings = ({ data }) => {
                 </div>
               </button>
             </div>
-            <div className="pr-[33px]">
-              <h4 className="font-[700] text-[20px] text-heading">
+            <div className="pr-[33px] flex flex-col gap-[10px]">
+              <h4 className="font-[700] text-[18px] lg:text-[20px] text-heading">
                 Construction Work
               </h4>
-              <p className="font-[400] text-[16px] text-paragraph">
+              <p className="font-[400] text-[15px] lg:text-[16px] text-paragraph">
                 Adipisicing esse aliqua aliquip qui amet. Aute eiusmod dolore
                 dolore et ad et veniam ad deserunt.
               </p>

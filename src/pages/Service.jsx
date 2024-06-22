@@ -472,7 +472,11 @@ const Service = () => {
         marginTop={true}
       />
       <Pricing />
-      <SupportedSection paddingBot={true} />
+      <SupportedSection
+        heading="Supported by 12+ partners"
+        paddingBot={true}
+        background={true}
+      />
       <DiscussDetails />
     </main>
   );

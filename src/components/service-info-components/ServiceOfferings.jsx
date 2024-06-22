@@ -58,7 +58,7 @@ const ServiceOfferings = ({ data }) => {
                   style={{
                     transition: "all 1s ease-out",
                   }}
-                  className={`size-[84px] rounded-full shrink-0 bg-primary bg-opacity-10 flex justify-center items-center ${
+                  className={`size-[84px] rounded-full shrink-0 bg-opacity-10 flex justify-center items-center ${
                     featureIndex === 0 ? "bg-[#FF5A30]" : "bg-[#FFFFFF]"
                   }`}>
                   01
@@ -91,7 +91,7 @@ const ServiceOfferings = ({ data }) => {
                   style={{
                     transition: "all 1s ease-out",
                   }}
-                  className={`size-[84px] rounded-full shrink-0 bg-primary bg-opacity-10 flex justify-center items-center ${
+                  className={`size-[84px] rounded-full shrink-0 bg-opacity-10 flex justify-center items-center ${
                     featureIndex === 1 ? "bg-[#FF5A30]" : "bg-[#FFFFFF]"
                   }`}>
                   02
@@ -125,7 +125,7 @@ const ServiceOfferings = ({ data }) => {
                   style={{
                     transition: "all 1s ease-out",
                   }}
-                  className={`size-[84px] rounded-full shrink-0 bg-primary bg-opacity-10 flex justify-center items-center ${
+                  className={`size-[84px] rounded-full shrink-0 bg-opacity-10 flex justify-center items-center ${
                     featureIndex === 2 ? "bg-[#FF5A30]" : "bg-[#FFFFFF]"
                   }`}>
                   03
@@ -158,7 +158,7 @@ const ServiceOfferings = ({ data }) => {
                   style={{
                     transition: "all 1s ease-out",
                   }}
-                  className={`size-[84px] rounded-full shrink-0 bg-primary bg-opacity-10 flex justify-center items-center ${
+                  className={`size-[84px] rounded-full shrink-0 bg-opacity-10 flex justify-center items-center ${
                     featureIndex === 3 ? "bg-[#FF5A30]" : "bg-[#FFFFFF]"
                   }`}>
                   04

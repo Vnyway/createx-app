@@ -68,13 +68,18 @@ const ServiceFeatures = ({ data, descriptionOpened, setDescriptionOpened }) => {
                   <h3 className="font-[700] text-[20px] md:text-[28px] text-heading">
                     {offering.name}
                   </h3>
-                  <p
+                  <div
                     style={{ transition: "all .3s ease-out" }}
-                    className={`${
-                      descriptionOpened === offering.id ? "h-[98px]" : "h-0"
-                    } font-[400] text-[12px] md:text-[16px] text-paragraph`}>
-                    {offering.description}
-                  </p>
+                    className={`grid ${
+                      descriptionOpened === offering.id
+                        ? "grid-rows-[1fr]"
+                        : "grid-rows-[0fr]"
+                    } `}>
+                    <p
+                      className={` font-[400] overflow-hidden text-[12px] md:text-[16px] text-paragraph`}>
+                      {offering.description}
+                    </p>
+                  </div>
                 </motion.div>
               </div>
             );

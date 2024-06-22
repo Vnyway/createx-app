@@ -88,7 +88,12 @@ const Home = () => {
         heading="Browse our selected projects and learn more about our work"
         projects={projects}
       />
-      <SupportedSection paddingTop={true} paddingBot={true} />
+      <SupportedSection
+        paddingTop={true}
+        paddingBot={true}
+        heading="Supported by 12+ partners"
+        background={true}
+      />
       <ClientsComments />
       <FactsAndNewsSection />
       <DiscussDetails />

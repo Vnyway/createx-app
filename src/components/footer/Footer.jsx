@@ -179,7 +179,7 @@ const Footer = () => {
               </motion.button>
             </div>
             <label
-              htmlFor=""
+              htmlFor="email"
               className="mt-[10px] font-[400] text-[12px] text-white opacity-60">
               *Subscribe to our newsletter to receive communications and early
               updates from Createx Construction Bureau.

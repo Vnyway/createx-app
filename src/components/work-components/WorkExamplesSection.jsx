@@ -26,14 +26,14 @@ const projects = [
   {
     id: 4,
     image: "./images/work/projects/double-bedroom.svg",
-    heading: "Modern Double Bedroom",
+    heading: "Double Bedroom",
     span: "Apartments & flats",
     categories: ["project development", "interior design"],
   },
   {
     id: 5,
     image: "./images/work/projects/kids-bedroom.svg",
-    heading: "Kids Bedroom With Decorations",
+    heading: "Kids Bedroom",
     span: "Apartments & flats",
     categories: ["project development", "interior design", "repairs"],
   },
@@ -47,14 +47,14 @@ const projects = [
   {
     id: 7,
     image: "./images/work/projects/scandinavian-interior.svg",
-    heading: "Scandinavian Style Interior",
+    heading: "Scandinavian Interior",
     span: "Private houses",
     categories: ["project development", "interior design", "repairs"],
   },
   {
     id: 8,
     image: "./images/work/projects/painted-house.svg",
-    heading: "Brown and Gray Painted House",
+    heading: "Painted House",
     span: "Private houses",
     categories: ["construction", "interior design", "repairs"],
   },
@@ -108,8 +108,8 @@ const WorkExamplesSection = ({ id }) => {
   }, [category]);
   return (
     <section>
-      <div className="container mx-auto mt-[-77px]">
-        <div className="grid grid-cols-5 gap-[20px] w-full">
+      <div className="container mx-auto pt-[40px] md:pt-0 md:mt-[-77px] pb-[40px] md:pb-[80px]">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-[20px] w-full">
           <motion.div
             initial="initial"
             whileHover="hover"
@@ -126,7 +126,7 @@ const WorkExamplesSection = ({ id }) => {
               },
             }}
             onClick={() => setCategory(1)}
-            className="flex flex-col items-center justify-center gap-[10px] h-[154px] rounded-[4px] shadow-md">
+            className="flex flex-col items-center justify-center gap-[10px] text-center h-[130px] md:h-[154px] rounded-[4px] shadow-md cursor-pointer">
             <svg
               width="48"
               height="48"
@@ -175,7 +175,7 @@ const WorkExamplesSection = ({ id }) => {
               },
             }}
             onClick={() => setCategory(2)}
-            className="flex flex-col items-center justify-center gap-[10px] h-[154px] rounded-[4px] shadow-md">
+            className="flex flex-col items-center justify-center gap-[10px] text-center h-[130px] md:h-[154px] rounded-[4px] shadow-md cursor-pointer">
             <svg
               width="48"
               height="48"
@@ -209,7 +209,7 @@ const WorkExamplesSection = ({ id }) => {
               },
             }}
             onClick={() => setCategory(3)}
-            className="flex flex-col items-center justify-center gap-[10px] h-[154px] rounded-[4px] shadow-md">
+            className="flex flex-col items-center justify-center gap-[10px] text-center h-[130px] md:h-[154px] rounded-[4px] shadow-md cursor-pointer">
             <svg
               width="48"
               height="48"
@@ -251,7 +251,7 @@ const WorkExamplesSection = ({ id }) => {
               },
             }}
             onClick={() => setCategory(4)}
-            className="flex flex-col items-center justify-center gap-[10px] h-[154px] rounded-[4px] shadow-md">
+            className="flex flex-col items-center justify-center gap-[10px] text-center h-[130px] md:h-[154px] rounded-[4px] shadow-md cursor-pointer">
             <svg
               width="48"
               height="48"
@@ -300,7 +300,7 @@ const WorkExamplesSection = ({ id }) => {
               },
             }}
             onClick={() => setCategory(5)}
-            className="flex flex-col items-center justify-center gap-[10px] h-[154px] rounded-[4px] shadow-md">
+            className="flex flex-col items-center justify-center gap-[10px] text-center h-[130px] md:h-[154px] rounded-[4px] shadow-md cursor-pointer">
             <svg
               width="48"
               height="48"
@@ -319,7 +319,7 @@ const WorkExamplesSection = ({ id }) => {
             <span>Repairs</span>
           </motion.div>
         </div>
-        <div className="grid grid-cols-3 gap-[20px] mt-[80px]">
+        <div className="grid grid-cols-1 min-[530px]:grid-cols-2 md:grid-cols-3 gap-[20px] pt-[40px] md:pt-[80px]">
           {shownProjects.map((element) => {
             return (
               <motion.div
@@ -334,7 +334,10 @@ const WorkExamplesSection = ({ id }) => {
                 />
                 <motion.div
                   variants={{
-                    initial: { height: "80px", marginTop: 0 },
+                    initial: {
+                      height: "80px",
+                      marginTop: 0,
+                    },
                     hover: {
                       height: "145px",
                       marginTop: "-65px",

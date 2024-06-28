@@ -113,11 +113,11 @@ const Features = () => {
           </p>
         </div>
       </div>
-      <div className="relative my-[40px] md:my-[80px] md:h-[700px] md:overflow-clip">
+      <div className="relative my-[40px] md:my-[80px] md:h-[600px]">
         <img
           src="./images/about-us/representer.svg"
           alt=""
-          className="md:absolute top-[100px]"
+          className="md:absolute top-[100px] w-full md:w-auto"
         />
         <div className="rounded-[4px] shadow-md bg-white flex flex-col md:flex-row items-start gap-[5px] md:gap-[20px] w-full md:w-[60%] md:absolute md:right-0 md:top-0 p-[15px] md:p-[40px]">
           <img src="./images/about-us/braces.svg" alt="" />
@@ -149,7 +149,7 @@ const Features = () => {
               <img
                 src="./images/about-us/signature.svg"
                 alt=""
-                className="w-[50%] md:w-auto"
+                className="w-[20%] md:w-auto"
               />
             </div>
           </div>

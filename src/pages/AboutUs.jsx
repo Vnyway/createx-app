@@ -3,6 +3,10 @@ import PageTopSection from "../components/general-components/PageTopSection";
 import Features from "../components/about-us-components/Features";
 import CoreValues from "../components/general-components/CoreValues";
 import History from "../components/about-us-components/History";
+import SupportedSection from "../components/general-components/SupportedSection";
+import Team from "../components/about-us-components/Team";
+import WorldWork from "../components/about-us-components/WorldWork";
+import DiscussDetails from "../components/general-components/DiscussDetails";
 
 const features = [
   {
@@ -45,6 +49,14 @@ const AboutUs = () => {
         paragraph="Our mission is to set the highest standards for construction sphere."
       />
       <History />
+      <SupportedSection
+        heading="Our partners"
+        paragraph="We are supported by 12+ industry bodies and media partners"
+        paddingTop={true}
+      />
+      <Team />
+      <WorldWork />
+      <DiscussDetails />
     </main>
   );
 };

@@ -30,7 +30,7 @@ const PageTopSection = ({ background, heading, paragraph, path }) => {
             })}
           </div>
         )}
-        <h1 className="font-[700] text-[40px] md:text-[72px] text-heading">
+        <h1 className="font-[700] text-[40px] md:text-[72px] text-heading max-w-[400px] leading-[80px]">
           {heading}
         </h1>
         <p className="font-[400] text-[16px] md:text-[20px] text-paragraph w-full md:w-[50%]">

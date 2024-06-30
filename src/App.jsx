@@ -8,6 +8,7 @@ import Contacts from "./pages/Contacts";
 import Services from "./pages/Services";
 import Footer from "./components/footer/Footer";
 import Service from "./pages/Service";
+import Positions from "./pages/Positions";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/:serviceId" element={<Service />} />
+        <Route path="/positions" element={<Positions />} />
       </Routes>
       <Footer />
     </BrowserRouter>

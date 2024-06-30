@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 const history = [
   {
@@ -69,43 +69,84 @@ const HistoryComponents = () => {
   ));
 };
 
+const HistoryLi = ({ id, text, historyIndex, setHistoryIndex }) => {
+  return (
+    <li className="relative">
+      <span
+        style={{ transition: "all ease-in-out 1s " }}
+        className={`size-[8px] absolute top-[50%] translate-y-[-50%] left-[-3px] shrink-0 rounded-full ${
+          historyIndex === id ? "bg-[#FF5A30]" : "bg-[#9A9CA5]"
+        } ring-[3px] ring-[#F3F4F5]`}></span>
+      <button
+        style={{ transition: "all ease-in-out 1s " }}
+        onClick={() => setHistoryIndex(id)}
+        className={`font-[700] text-[22px] md:text-[28px] pl-[20px] py-[7px] border-l-[2px] border-[#9A9CA5] border-opacity-60 ${
+          historyIndex === id ? "text-primary" : "text-[#9A9CA5]"
+        }`}>
+        {text}
+      </button>
+    </li>
+  );
+};
+
 const History = () => {
   const [historyIndex, setHistoryIndex] = useState(0);
+  const dragX = useMotionValue(0);
+  const list = [
+    { id: 0, text: "Present" },
+    { id: 1, text: "March 2019" },
+    { id: 2, text: "November 2018" },
+    { id: 3, text: "July 2015" },
+    { id: 4, text: "August 2010" },
+    { id: 5, text: "February 2007" },
+    { id: 6, text: "May 2004" },
+    { id: 7, text: "October 2001" },
+    { id: 8, text: "June 2000" },
+  ];
+
+  const onDragEnd = () => {
+    const x = dragX.get();
+    if (x <= -50 && historyIndex < 8) {
+      setHistoryIndex((pv) => pv + 1);
+    } else if (x >= 50 && historyIndex > 0) {
+      setHistoryIndex((pv) => pv - 1);
+    }
+  };
+
   return (
     <section className="bg-[#F3F4F5]">
-      <div className="container mx-auto py-[40px] md:py-[80px] flex">
-        <div className="w-[40%] pr-[50px] flex flex-col">
-          <h3 className="font-[700] text-heading text-[46px]">Our history</h3>
-          <div>
-            <ul>
-              <li>
-                <button
-                  onClick={() => setHistoryIndex(0)}
-                  className={`font-[700] text-[28px] ${
-                    historyIndex === 0 ? "text-primary" : "text-[#9A9CA5]"
-                  }`}>
-                  Present
-                </button>
-              </li>
-            </ul>
-          </div>
+      <div className="container mx-auto pt-[20px] pb-[40px] md:pt-[40px] md:pb-[80px] flex flex-col md:flex-row">
+        <div className="w-full md:w-[40%] lg:pr-[50px] flex flex-col">
+          <h3 className="font-[700] text-heading text-[26px] md:text-[46px]">
+            Our history
+          </h3>
+          <ul className="mt-[20px] md:mt-[40px]">
+            {list.map((element) => (
+              <HistoryLi
+                id={element.id}
+                text={element.text}
+                historyIndex={historyIndex}
+                setHistoryIndex={setHistoryIndex}
+              />
+            ))}
+          </ul>
         </div>
-        <div className="w-[60%] flex flex-col">
-          <div>
+        <div className="w-full md:w-[60%] flex flex-col">
+          <div className="hidden md:block h-[120px] relative">
             <motion.button
               initial="initial"
               whileHover="hover"
               variants={{
-                initial: { backgroundColor: "#FFFFFF" },
+                initial: { backgroundColor: "#F3F4F5" },
                 hover: {
-                  backgroundColor: historyIndex > 0 ? "#FF5A30" : "#FFFFFF",
+                  backgroundColor: historyIndex > 0 ? "#FF5A30" : "#F3F4F5",
                   transition: { duration: 0.3 },
                 },
               }}
               onClick={() =>
                 historyIndex > 0 && setHistoryIndex((pv) => pv - 1)
               }
-              className={`absolute right-[55px] bottom-[10px] size-[48px] flex justify-center items-center rounded-full ${
+              className={`absolute right-[55px] bottom-[50%] translate-y-[50%] size-[48px] flex justify-center items-center rounded-full ${
                 historyIndex > 0 ? "" : "cursor-default"
               }`}>
               <svg
@@ -121,7 +162,7 @@ const History = () => {
                   variants={{
                     initial: { fill: "#424551" },
                     hover: {
-                      fill: historyIndex > 0 ? "#FFFFFF" : "#424551",
+                      fill: historyIndex > 0 ? "#F3F4F5" : "#424551",
                       transition: { duration: 0.3 },
                     },
                   }}
@@ -132,14 +173,16 @@ const History = () => {
               initial="initial"
               whileHover="hover"
               variants={{
-                initial: { backgroundColor: "#FFFFFF" },
+                initial: { backgroundColor: "#F3F4F5" },
                 hover: {
-                  backgroundColor: historyIndex < 8 ? "#FF5A30" : "#FFFFFF",
+                  backgroundColor: historyIndex < 8 ? "#FF5A30" : "#F3F4F5",
                   transition: { duration: 0.3 },
                 },
               }}
-              onClick={() => setHistoryIndex((pv) => pv + 1)}
-              className={`absolute right-0 bottom-[10px] size-[48px] flex justify-center items-center rounded-full ${
+              onClick={() => {
+                historyIndex < 8 && setHistoryIndex((pv) => pv + 1);
+              }}
+              className={`absolute right-0 bottom-[50%] translate-y-[50%] size-[48px] flex justify-center items-center rounded-full ${
                 historyIndex < 8 ? "" : "cursor-default"
               }`}>
               <svg
@@ -156,7 +199,7 @@ const History = () => {
                   variants={{
                     initial: { fill: "#424551" },
                     hover: {
-                      fill: historyIndex < 8 ? "#FFFFFF" : "#424551",
+                      fill: historyIndex < 8 ? "#F3F4F5" : "#424551",
                       transition: { duration: 0.3 },
                     },
                   }}
@@ -164,10 +207,13 @@ const History = () => {
               </svg>
             </motion.button>
           </div>
-          <div className="overflow-hidden">
+          <div className="overflow-hidden mt-[40px] md:mt-0">
             <motion.div
-              style={{ transition: "all ease-out 0.5s" }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              style={{ x: dragX, transition: "all ease-out 0.5s" }}
               animate={{ translateX: `-${historyIndex * 100}%` }}
+              onDragEnd={onDragEnd}
               className="flex cursor-grab active:cursor-grabbing items-center">
               <HistoryComponents />
             </motion.div>

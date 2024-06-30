@@ -1,6 +1,12 @@
 import React from "react";
 
-const SupportedSection = ({ paddingTop, paddingBot, heading, background }) => {
+const SupportedSection = ({
+  paddingTop,
+  paddingBot,
+  heading,
+  paragraph,
+  background,
+}) => {
   return (
     <section
       className={`${paddingBot && "pb-[20px] md:pb-[40px]"} ${
@@ -10,7 +16,13 @@ const SupportedSection = ({ paddingTop, paddingBot, heading, background }) => {
         <h3 className="text-center font-[700] text-[28px] md:text-[46px] text-heading">
           {heading}
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[40px] mt-[40px] mb-[80px]">
+        {paragraph && (
+          <p className="font-[400] text-[14px] md:text-[18px] text-paragraph text-center pt-[20px]">
+            {paragraph}
+          </p>
+        )}
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[40px] mt-[40px] mb-[40px] md:mb-[40px]">
           <div className="flex items-center justify-center">
             <img src="./images/partners/in-depth-consulting.svg" alt="" />
           </div>

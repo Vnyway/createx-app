@@ -1,5 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Newsletter from "./Newsletter";
+import CV from "./CV";
 
 const offerings = [
   {
@@ -30,14 +32,16 @@ const offerings = [
 ];
 
 const Offerings = () => {
+  const [subscribe, setSubscribe] = useState(false);
+  const [resume, setResume] = useState(false);
   return (
-    <section>
-      <div className="container mx-auto py-[40px] md:py-[80px] flex gap-[10%]">
-        <div className="flex flex-col gap-[20px] w-[60%]">
+    <section className="relative">
+      <div className="container mx-auto py-[40px] md:py-[80px] flex flex-col md:flex-row md:gap-[10%]">
+        <div className="flex flex-col gap-[20px] w-full md:w-[60%]">
           {offerings.map((element) => (
             <div
               style={{ transition: "all ease-in-out .3s" }}
-              className="py-[20px] px-[30px] flex justify-between items-center rounded-[4px] border-[1px] border-[#E5E8ED] shadow-sm hover:shadow-md">
+              className="py-[20px] px-[30px] flex flex-col gap-[15px] md:gap-0 md:flex-row md:justify-between md:items-center rounded-[4px] border-[1px] border-[#E5E8ED] shadow-sm hover:shadow-md">
               <div className="flex flex-col gap-[5px]">
                 <div className="flex gap-[10px] items-center">
                   <div className="flex gap-[3px]">
@@ -70,7 +74,7 @@ const Offerings = () => {
             </div>
           ))}
         </div>
-        <div className="w-[30%] flex flex-col gap-[20px]">
+        <div className="w-full pt-[30px] md:pt-0 md:w-[30%] flex flex-col gap-[20px]">
           <h4 className="font-[700] text-[28px] text-heading">
             Didn’t find what you were looking for?
           </h4>
@@ -78,15 +82,16 @@ const Offerings = () => {
             Send your CV or subscribe to our newsletter to receive information
             about new vacancies.
           </p>
-          <div className="flex w-full gap-[10px]">
+          <div className="flex w-full gap-[2%]">
             <motion.button
               style={{ transition: "all ease-out .3s" }}
               initial={{ color: "#FF5A30", backgroundColor: "#FFFFFF" }}
+              onClick={() => setSubscribe(true)}
               whileHover={{
                 color: "#FFFFFF",
                 backgroundColor: "#FF5A30",
               }}
-              className="w-[151px] h-[44px]  font-[700] text-[14px] border-[1px] border-primary rounded-[4px] uppercase flex justify-center items-center">
+              className="w-[49%] h-[44px]  font-[700] text-[14px] border-[1px] border-primary rounded-[4px] uppercase flex justify-center items-center">
               subscribe
             </motion.button>
             <motion.button
@@ -95,13 +100,20 @@ const Offerings = () => {
                 color: "#FFFFFF",
                 backgroundColor: "#FF5A30",
               }}
+              onClick={() => setResume(true)}
               whileHover={{ color: "#FF5A30", backgroundColor: "#FFFFFF" }}
-              className="w-[151px] h-[44px]  font-[700] text-[14px] border-[1px] border-primary rounded-[4px] uppercase flex justify-center items-center">
+              className="w-[49%] h-[44px]  font-[700] text-[14px] border-[1px] border-primary rounded-[4px] uppercase flex justify-center items-center">
               send cv
             </motion.button>
           </div>
         </div>
       </div>
+      <AnimatePresence initial={false}>
+        {subscribe && <Newsletter setSubscribe={setSubscribe} />}
+      </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {resume && <CV setResume={setResume} />}
+      </AnimatePresence>
     </section>
   );
 };

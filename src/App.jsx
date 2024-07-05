@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import Footer from "./components/footer/Footer";
 import Service from "./pages/Service";
 import Positions from "./pages/Positions";
+import NewsIndex from "./pages/NewsIndex";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/:serviceId" element={<Service />} />
         <Route path="/positions" element={<Positions />} />
+        <Route path="/news/:newsId" element={<NewsIndex />} />
       </Routes>
       <Footer />
     </BrowserRouter>

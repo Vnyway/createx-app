@@ -444,7 +444,6 @@ const projects = [
 
 const Service = () => {
   const { serviceId } = useParams();
-  console.log(serviceId);
   const data = services.find((element) => element.id === Number(serviceId));
   return (
     <main>

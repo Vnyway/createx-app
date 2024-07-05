@@ -30,9 +30,11 @@ const CoreValues = ({
   }, [isSubmitSuccessful]);
   return (
     <section
-      className={`pt-[40px] md:pt-[80px] ${
-        background === "dark" && "bg-heading"
-      } ${background === "gray" && "bg-[#F4F5F6]"}`}>
+      className={`pt-[20px] md:pt-[40px] ${
+        !isForm && !isButton && "pb-[40px] md:pb-[80px]"
+      } ${background === "dark" && "bg-heading"} ${
+        background === "gray" && "bg-[#F4F5F6]"
+      }`}>
       <div className="container mx-auto flex flex-col">
         <div className="text-center mb-[20px]">
           <h2

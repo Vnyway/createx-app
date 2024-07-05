@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row gap-[20px] md:gap-[80px] md:items-center">
               <Link to="/">
                 <motion.img
-                  src="./images/logo-white.svg"
+                  src="/images/logo-white.svg"
                   alt=""
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -289,7 +289,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-wrap md:flex-nowrap items-center gap-[5px] text-white text-opacity-60 mt-[20px] md:mt-[60px]">
           <span>© All rights reserved. Made with</span>
-          <img src="./images/footer/heart.svg" alt="heart" />
+          <img src="/images/footer/heart.svg" alt="heart" />
           <span>by Createx Studio </span>
         </div>
       </div>

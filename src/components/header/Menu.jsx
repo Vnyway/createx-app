@@ -10,7 +10,7 @@ const Menu = () => {
           <li>
             <Link to="/">
               <motion.img
-                src="./images/logo.svg"
+                src="/images/logo.svg"
                 alt=""
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -49,7 +49,7 @@ const Menu = () => {
               to="/contacts"
               className="flex flex-col md:flex-row gap-[10px] py-[15px]">
               <img
-                src="./images/phone.svg"
+                src="/images/phone.svg"
                 alt=""
                 className="w-[40px] md:w-auto"
               />
@@ -68,7 +68,7 @@ const Menu = () => {
               to="/contacts"
               className="flex flex-col md:flex-row gap-[10px] py-[15px]">
               <img
-                src="./images/chat.svg"
+                src="/images/chat.svg"
                 alt=""
                 className="w-[40px] md:w-auto"
               />

@@ -151,7 +151,11 @@ const SelectedProjectsSection = ({ heading, projects, marginTop }) => {
             <SelectedProjects projects={projects} />
           </motion.div>
         </div>
-        <LearnMore heading="Explore all our works" button="View portfolio" />
+        <LearnMore
+          heading="Explore all our works"
+          button="View portfolio"
+          link="work"
+        />
       </div>
     </section>
   );

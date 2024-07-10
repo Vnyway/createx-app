@@ -27,7 +27,7 @@ const DiscussDetails = () => {
   return (
     <section
       style={{
-        backgroundImage: `url("./images/discuss-details/background.svg")`,
+        backgroundImage: `url("/images/discuss-details/background.svg")`,
         backgroundSize: "cover",
       }}
       className="">

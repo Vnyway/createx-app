@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, stagger, useMotionValue } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const imagesIndexes = [1, 2, 3, 4];
 
@@ -27,25 +28,29 @@ const Images = () => {
             consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis
             purus eget pellentesque integer ipsum elementum felis.{" "}
           </p>
-          <div className="flex flex-col md:flex-row gap-[20px] font-[700] text-[12px] md:text-[16px]">
-            <motion.button
-              transition={{ duration: 0.3 }}
-              whileHover={{
-                backgroundColor: "#FF5A30",
-                borderColor: "#FF5A30",
-              }}
-              className="uppercase border-[1px] rounded-[4px] border-white bg-transparent px-[39px] py-[15px]">
-              learn more about us
-            </motion.button>
-            <motion.button
-              transition={{ duration: 0.3 }}
-              whileHover={{
-                backgroundColor: "#FFFFFF00",
-                borderColor: "white",
-              }}
-              className="uppercase border-[1px] rounded-[4px] border-primary bg-primary px-[39px] py-[15px]">
-              submit request
-            </motion.button>
+          <div className="flex flex-col md:flex-row gap-[20px] md:gap-[10px] font-[700] text-[12px] md:text-[16px]">
+            <Link to="/aboutUS" onClick={() => window.scrollTo(0, 0)}>
+              <motion.button
+                transition={{ duration: 0.3 }}
+                whileHover={{
+                  backgroundColor: "#FF5A30",
+                  borderColor: "#FF5A30",
+                }}
+                className="w-full min-[360px]:w-[300px] md:w-auto uppercase border-[1px] rounded-[4px] border-white bg-transparent px-[39px] py-[15px]">
+                learn more about us
+              </motion.button>
+            </Link>
+            <Link to="/contacts" onClick={() => window.scrollTo(0, 0)}>
+              <motion.button
+                transition={{ duration: 0.3 }}
+                whileHover={{
+                  backgroundColor: "#FFFFFF00",
+                  borderColor: "white",
+                }}
+                className="w-full min-[360px]:w-[300px] md:w-auto uppercase border-[1px] rounded-[4px] border-primary bg-primary px-[39px] py-[15px]">
+                submit request
+              </motion.button>
+            </Link>
           </div>
         </div>
       </div>

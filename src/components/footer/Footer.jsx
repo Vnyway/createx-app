@@ -147,7 +147,7 @@ const Footer = () => {
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="w-full md:w-[40%] flex flex-col mt-[11px] md:mt-[-9px]">
-            <h3 className="font-[700] text-[24px] mb-[20px] md:mb-[40px] text-[#FFFFFF]">
+            <h3 className="font-[700] text-[24px] mb-[20px] text-[#FFFFFF]">
               Let’s stay in touch
             </h3>
             <div className="h-[44px] relative w-full flex">
@@ -197,7 +197,7 @@ const Footer = () => {
                 </p>
                 <p>
                   <span className="text-white">Call: </span>
-                  <Link to="/contacts">
+                  <Link to="/contacts" onClick={() => window.scrollTo(0, 0)}>
                     <motion.span
                       whileHover={{
                         color: "#FFFFFF",
@@ -209,7 +209,7 @@ const Footer = () => {
                 </p>
                 <p>
                   <span className="text-white">Email: </span>
-                  <Link to="/contacts">
+                  <Link to="/contacts" onClick={() => window.scrollTo(0, 0)}>
                     <motion.span
                       whileHover={{
                         color: "#FFFFFF",
@@ -224,7 +224,7 @@ const Footer = () => {
             <div className="flex flex-col mb-[20px] md:mb-0 gap-[10px] text-white text-opacity-60">
               <h4 className="font-[700] text-[16px] text-white">WHO WE ARE</h4>
               <div className="flex flex-col gap-[5px]">
-                <Link to="/aboutUs">
+                <Link to="/aboutUs" onClick={() => window.scrollTo(0, 0)}>
                   <motion.span
                     whileHover={{
                       color: "#FFFFFF",
@@ -233,7 +233,7 @@ const Footer = () => {
                     About Us
                   </motion.span>
                 </Link>
-                <Link to="/">
+                <Link to="/positions" onClick={() => window.scrollTo(0, 0)}>
                   <motion.span
                     whileHover={{
                       color: "#FFFFFF",
@@ -242,7 +242,7 @@ const Footer = () => {
                     Available Positions
                   </motion.span>
                 </Link>
-                <Link to="/">
+                <Link to="/contacts" onClick={() => window.scrollTo(0, 0)}>
                   <motion.span
                     whileHover={{
                       color: "#FFFFFF",
@@ -257,7 +257,7 @@ const Footer = () => {
           <div className="flex flex-col gap-[10px] text-white text-opacity-60">
             <h4 className="font-[700] text-[16px] text-white">WHO WE ARE</h4>
             <div className="flex flex-col gap-[5px]">
-              <Link to="/services">
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)}>
                 <motion.span
                   whileHover={{
                     color: "#FFFFFF",
@@ -266,7 +266,7 @@ const Footer = () => {
                   Services
                 </motion.span>
               </Link>
-              <Link to="/work">
+              <Link to="/work" onClick={() => window.scrollTo(0, 0)}>
                 <motion.span
                   whileHover={{
                     color: "#FFFFFF",
@@ -275,7 +275,7 @@ const Footer = () => {
                   Work
                 </motion.span>
               </Link>
-              <Link to="/news">
+              <Link to="/news" onClick={() => window.scrollTo(0, 0)}>
                 <motion.span
                   whileHover={{
                     color: "#FFFFFF",

@@ -6,7 +6,7 @@ import InputError from "../general-components/InputError";
 const NewsDetails = ({ id, details }) => {
   const form = useForm({
     defaultValues: {
-      name: "",
+      author: "",
       email: "",
       comment: "",
       date: new Date(),
@@ -15,7 +15,7 @@ const NewsDetails = ({ id, details }) => {
   const { register, formState, handleSubmit, reset } = form;
   const { errors, isSubmitSuccessful } = formState;
   const onSubmit = (data) => {
-    console.log(data);
+    details.comments.push(data);
   };
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -24,16 +24,16 @@ const NewsDetails = ({ id, details }) => {
   }, [isSubmitSuccessful]);
 
   return (
-    <section className="mt-[-80px]">
+    <section className="mt-[-60px] md:mt-[-80px]">
       <div className="container mx-auto flex flex-col gap-[60px]">
         <img src={`/images/news/news${id + 1}.svg`} alt="" />
-        <div className="px-[10%] flex flex-col gap-[30px] font-[400] text-[16px] text-customGray">
-          <h3 className="font-[700] text-[20px] text-heading">
+        <div className="md:px-[10%] flex flex-col gap-[30px] font-[400] text-[16px] text-customGray">
+          <h3 className="font-[700] text-[17px] md:text-[20px] text-heading">
             {details.boldParagraph}
           </h3>
           <p>{details.paragraphs[0]}</p>
           <p>{details.paragraphs[1]}</p>
-          <div className="flex items-start gap-[20px]">
+          <div className="flex flex-col md:flex-row items-start gap-[10px] md:gap-[20px]">
             <img
               src="/images/about-us/braces.svg"
               alt="braces"
@@ -118,7 +118,7 @@ const NewsDetails = ({ id, details }) => {
               </svg>
             </motion.a>
           </div>
-          <h2 className="text-center py-[40px] font-[700] text-[46px] text-heading">
+          <h2 className="text-center py-[20px] md:py-[40px] font-[700] text-[32px] md:text-[46px] text-heading">
             {details.comments.length === 0 ? "No" : details.comments.length}{" "}
             {details.comments.length === 0 || details.comments.length > 1
               ? "comments"
@@ -136,14 +136,14 @@ const NewsDetails = ({ id, details }) => {
                 options
               );
               return (
-                <div className="w-full flex gap-[1%]">
-                  <div className="w-[30%] flex flex-col gap-[5px]">
+                <div className="w-full flex flex-col md:flex-row gap-[15px] md:gap-[1%]">
+                  <div className="w-full md:w-[30%] flex flex-col gap-[5px]">
                     <h4 className="font-[700] text-[18px] text-heading">
                       {element.author}
                     </h4>
                     <span>{formatedDate}</span>
                   </div>
-                  <div className="w-[69%] flex flex-col gap-[10px]">
+                  <div className="w-full md:w-[69%] flex flex-col gap-[10px]">
                     <p>{element.comment}</p>
                   </div>
                 </div>
@@ -152,31 +152,31 @@ const NewsDetails = ({ id, details }) => {
           </div>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[15px] pt-[30px] pb-[40px] md:pb-[80px]">
-            <h2 className="font-[700] text-[46px] text-heading text-center pb-[20px]">
+            className="flex flex-col gap-[15px] pt-[10px] md:pt-[30px] pb-[40px] md:pb-[80px]">
+            <h2 className="font-[700] text-[32px] md:text-[46px] text-heading text-center pb-[20px]">
               Leave your comment
             </h2>
-            <div className="w-full flex gap-[2%]">
-              <div className="w-[49%] flex flex-col gap-[5px]">
+            <div className="w-full flex flex-col md:flex-row gap-[15px] md:gap-[2%]">
+              <div className="w-full md:w-[49%] flex flex-col gap-[5px]">
                 <div className="flex justify-between">
                   <label
-                    htmlFor="name"
+                    htmlFor="author"
                     className="font-[400] text-[14px] text-customGray">
                     Name*
                   </label>
-                  <InputError message={errors.name?.message} />
+                  <InputError message={errors.author?.message} />
                 </div>
                 <input
                   type="text"
                   placeholder="Your name"
                   className="rounded-[4px] border-[#D7DADD] border-[1px] bg-[#F4F5F6] text-[#9A9CA5] font-[400] text-[14px] p-[10px] outline-primary"
-                  id="name"
-                  {...register("name", {
+                  id="author"
+                  {...register("author", {
                     required: { value: true, message: "Required" },
                   })}
                 />
               </div>
-              <div className="w-[49%] flex flex-col gap-[5px]">
+              <div className="w-full md:w-[49%] flex flex-col gap-[5px]">
                 <div className="flex justify-between">
                   <label
                     htmlFor="email"
@@ -213,7 +213,7 @@ const NewsDetails = ({ id, details }) => {
               <textarea
                 type="text"
                 placeholder="Type comment here"
-                className="rounded-[4px] border-[#D7DADD] border-[1px] bg-[#F4F5F6] text-[#9A9CA5] font-[400] text-[14px] p-[10px] outline-primary min-h-[100px] resize-none"
+                className="rounded-[4px] border-[#D7DADD] border-[1px] bg-[#F4F5F6] text-[#9A9CA5] font-[400] text-[14px] p-[10px] outline-primary min-h-[60px] md:min-h-[100px] resize-none"
                 id="comment"
                 {...register("comment", {
                   required: { value: true, message: "Required" },
@@ -228,7 +228,7 @@ const NewsDetails = ({ id, details }) => {
                   backgroundColor: "#FFFFFF",
                   transition: { duration: 0.3 },
                 }}
-                className="font-[700] text-[16px] border-[1px] border-primary rounded-[4px] w-[215px] h-[52px] flex justify-center items-center">
+                className="uppercase font-[700] text-[16px] border-[1px] border-primary rounded-[4px] w-[215px] h-[52px] flex justify-center items-center">
                 Post comment
               </motion.button>
             </div>

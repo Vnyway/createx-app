@@ -84,7 +84,10 @@ const Team = () => {
         </div>
         <p className="font-[400] text-[16px] md:text-[18px] text-heading text-center">
           Become a part of the best team in the construction market of the USA.{" "}
-          <Link className="text-primary underline" to="/positions">
+          <Link
+            className="text-primary underline"
+            to="/positions"
+            onClick={() => window.scrollTo(0, 0)}>
             Available Positions
           </Link>
         </p>

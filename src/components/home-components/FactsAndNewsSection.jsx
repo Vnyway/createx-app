@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import LearnMore from "./LearnMore";
+import { Link } from "react-router-dom";
 
 const news = [
   {
@@ -150,7 +151,12 @@ const FactsAndNewsSection = () => {
             Recent news
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-[20px]">
-            <div className="md:row-span-2 md:col-span-3">
+            <Link
+              to="/news/1"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+              className="md:row-span-2 md:col-span-3">
               <RecentNews
                 h3={news[0].h3}
                 img={news[0].img}
@@ -159,8 +165,13 @@ const FactsAndNewsSection = () => {
                 commentsCount={news[0].commentsCount}
                 description={news[0].description}
               />
-            </div>
-            <div className="md:col-span-2">
+            </Link>
+            <Link
+              to="/news/2"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+              className="md:col-span-2">
               <RecentNews
                 h3={news[1].h3}
                 img={news[1].img}
@@ -169,8 +180,13 @@ const FactsAndNewsSection = () => {
                 commentsCount={news[1].commentsCount}
                 description={news[1].description}
               />
-            </div>
-            <div className="md:col-span-2">
+            </Link>
+            <Link
+              to="/news/6"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+              className="md:col-span-2">
               <RecentNews
                 h3={news[2].h3}
                 img={news[2].img}
@@ -179,12 +195,13 @@ const FactsAndNewsSection = () => {
                 commentsCount={news[2].commentsCount}
                 description={news[2].description}
               />
-            </div>
+            </Link>
           </div>
         </div>
         <LearnMore
           heading="Explore all our news posts"
           button="View all news"
+          link="news"
         />
       </div>
     </section>

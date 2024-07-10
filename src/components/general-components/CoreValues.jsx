@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import InputError from "./InputError";
+import { Link } from "react-router-dom";
 
 const CoreValues = ({
   isForm,
@@ -187,13 +188,15 @@ const CoreValues = ({
         )}
         {isButton && (
           <div className="w-full flex justify-center">
-            <motion.button
-              initial={{ backgroundColor: "#FF5A30", color: "#FFFFFF" }}
-              whileHover={{ backgroundColor: "#1E212C", color: "#FF5A30" }}
-              transition={{ duration: 0.3 }}
-              className="uppercase w-[390px] h-[52px] flex justify-center items-center font-[700] text-[16px] border-[1px] border-primary rounded-[4px] mt-[60px]">
-              Discuss a project
-            </motion.button>
+            <Link to="/work" onClick={() => window.scrollTo(0, 0)}>
+              <motion.button
+                initial={{ backgroundColor: "#FF5A30", color: "#FFFFFF" }}
+                whileHover={{ backgroundColor: "#1E212C", color: "#FF5A30" }}
+                transition={{ duration: 0.3 }}
+                className="uppercase w-[390px] h-[52px] flex justify-center items-center font-[700] text-[16px] border-[1px] border-primary rounded-[4px] mt-[60px]">
+                Discuss a project
+              </motion.button>
+            </Link>
           </div>
         )}
       </div>

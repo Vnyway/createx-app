@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   return (
@@ -218,41 +219,47 @@ const Pricing = () => {
               <td></td>
               <td>
                 <div className="py-[30px] flex justify-center items-center">
-                  <motion.button
-                    initial={{ backgroundColor: "#FFFFFF", color: "#FF5A30" }}
-                    whileHover={{
-                      backgroundColor: "#FF5A30",
-                      color: "#FFFFFF",
-                    }}
-                    className="border-[1px] border-primary rounded-[4px] w-[110px] lg:w-[143px] h-[36px] flex justify-center items-center uppercase font-[700] text-[11px] lg:text-[12px]">
-                    send request
-                  </motion.button>
+                  <Link to="/contacts" onClick={() => window.scrollTo(0, 0)}>
+                    <motion.button
+                      initial={{ backgroundColor: "#FFFFFF", color: "#FF5A30" }}
+                      whileHover={{
+                        backgroundColor: "#FF5A30",
+                        color: "#FFFFFF",
+                      }}
+                      className="border-[1px] border-primary rounded-[4px] w-[110px] lg:w-[143px] h-[36px] flex justify-center items-center uppercase font-[700] text-[11px] lg:text-[12px]">
+                      send request
+                    </motion.button>
+                  </Link>
                 </div>
               </td>
               <td>
                 <div className="py-[30px] flex justify-center items-center">
-                  <motion.button
-                    initial={{ backgroundColor: "#FFFFFF", color: "#FF5A30" }}
-                    whileHover={{
-                      backgroundColor: "#FF5A30",
-                      color: "#FFFFFF",
-                    }}
-                    className="border-[1px] border-primary rounded-[4px] w-[110px] lg:w-[143px] h-[36px] flex justify-center items-center uppercase font-[700] text-[11px] lg:text-[12px]">
-                    send request
-                  </motion.button>
+                  <Link to="/contacts" onClick={() => window.scrollTo(0, 0)}>
+                    <motion.button
+                      initial={{ backgroundColor: "#FFFFFF", color: "#FF5A30" }}
+                      whileHover={{
+                        backgroundColor: "#FF5A30",
+                        color: "#FFFFFF",
+                      }}
+                      className="border-[1px] border-primary rounded-[4px] w-[110px] lg:w-[143px] h-[36px] flex justify-center items-center uppercase font-[700] text-[11px] lg:text-[12px]">
+                      send request
+                    </motion.button>
+                  </Link>
                 </div>
               </td>
               <td>
                 <div className="py-[30px] flex justify-center items-center">
-                  <motion.button
-                    initial={{ backgroundColor: "#FFFFFF", color: "#FF5A30" }}
-                    whileHover={{
-                      backgroundColor: "#FF5A30",
-                      color: "#FFFFFF",
-                    }}
-                    className="border-[1px] border-primary rounded-[4px] w-[110px] lg:w-[143px] h-[36px] flex justify-center items-center uppercase font-[700] text-[11px] lg:text-[12px]">
-                    send request
-                  </motion.button>
+                  <Link to="/contacts" onClick={() => window.scrollTo(0, 0)}>
+                    <motion.button
+                      initial={{ backgroundColor: "#FFFFFF", color: "#FF5A30" }}
+                      whileHover={{
+                        backgroundColor: "#FF5A30",
+                        color: "#FFFFFF",
+                      }}
+                      className="border-[1px] border-primary rounded-[4px] w-[110px] lg:w-[143px] h-[36px] flex justify-center items-center uppercase font-[700] text-[11px] lg:text-[12px]">
+                      send request
+                    </motion.button>
+                  </Link>
                 </div>
               </td>
             </tr>

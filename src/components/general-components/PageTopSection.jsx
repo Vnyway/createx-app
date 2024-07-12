@@ -16,13 +16,17 @@ const PageTopSection = ({ background, heading, paragraph, path }) => {
             {path.map((element, id) => {
               if (id < path.length - 1) {
                 return (
-                  <span className="font-[400] text-[14px] text-heading">
+                  <span
+                    key={id}
+                    className="font-[400] text-[14px] text-heading">
                     <Link to={element.ref}>{`${element.name} / `}</Link>
                   </span>
                 );
               } else {
                 return (
-                  <span className="font-[400] text-[14px] text-paragraph">
+                  <span
+                    key={id}
+                    className="font-[400] text-[14px] text-paragraph">
                     {element.name}
                   </span>
                 );

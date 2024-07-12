@@ -45,8 +45,12 @@ const Services = () => {
       return (
         <div
           className="w-full flex flex-col md:flex-row gap-[20px] md:gap-[80px]"
-          id={element.id}>
-          <img src={element.image} alt="" className="w-full md:w-[50%]" />
+          key={element.id}>
+          <img
+            src={element.image}
+            alt={element.heading}
+            className="w-full md:w-[50%]"
+          />
           <div className="flex flex-col justify-center gap-[10px] md:gap-[30px]">
             <h3 className="font-[700] text-[32px] text-heading">
               {element.heading}
@@ -67,7 +71,7 @@ const Services = () => {
       return (
         <div
           className="w-full flex flex-col md:flex-row gap-[20px] md:gap-[80px]"
-          id={element.id}>
+          key={element.id}>
           <div className="flex flex-col justify-center gap-[10px] md:gap-[30px]">
             <h3 className="font-[700] text-[32px] text-heading">
               {element.heading}
@@ -82,7 +86,11 @@ const Services = () => {
               Learn more
             </Link>
           </div>
-          <img src={element.image} alt="" className="w-full md:w-[50%]" />
+          <img
+            src={element.image}
+            alt={element.heading}
+            className="w-full md:w-[50%]"
+          />
         </div>
       );
     }

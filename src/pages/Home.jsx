@@ -8,6 +8,7 @@ import ClientsComments from "../components/home-components/ClientsComments";
 import FactsAndNewsSection from "../components/home-components/FactsAndNewsSection";
 import DiscussDetails from "../components/general-components/DiscussDetails";
 import SupportedSection from "../components/general-components/SupportedSection";
+import { projects } from "../components/work-components/WorkExamplesSection";
 
 const features = [
   {
@@ -30,45 +31,6 @@ const features = [
     name: "Comfort",
     description:
       "Sit veniam aute dolore adipisicing nulla sit culpa. Minim mollit voluptate ullamco proident ea ad.",
-  },
-];
-
-const projects = [
-  {
-    id: 1,
-    image: "./images/home/projects/red-finger.svg",
-    h4: "Red Finger Building",
-    span: "Business Centers",
-  },
-  {
-    id: 2,
-    image: "./images/home/projects/pencil.svg",
-    h4: "The Pencil Building",
-    span: "Business Centers",
-  },
-  {
-    id: 3,
-    image: "./images/home/projects/red-finger.svg",
-    h4: "Red Finger Building",
-    span: "Business Centers",
-  },
-  {
-    id: 4,
-    image: "./images/home/projects/pencil.svg",
-    h4: "The Pencil Building",
-    span: "Business Centers",
-  },
-  {
-    id: 5,
-    image: "./images/home/projects/red-finger.svg",
-    h4: "Red Finger Building",
-    span: "Business Centers",
-  },
-  {
-    id: 6,
-    image: "./images/home/projects/pencil.svg",
-    h4: "The Pencil Building",
-    span: "Business Centers",
   },
 ];
 

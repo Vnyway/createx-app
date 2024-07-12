@@ -24,22 +24,31 @@ const SupportedSection = ({
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[40px] mt-[40px] mb-[40px] md:mb-[40px]">
           <div className="flex items-center justify-center">
-            <img src="./images/partners/in-depth-consulting.svg" alt="" />
+            <img
+              src="./images/partners/in-depth-consulting.svg"
+              alt="in-depth-consulting"
+            />
           </div>
           <div className="flex items-center justify-center">
-            <img src="./images/partners/higher-fit.svg" alt="" />
+            <img src="./images/partners/higher-fit.svg" alt="higher-fit" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="./images/partners/sentinal-consulting.svg" alt="" />
+            <img
+              src="./images/partners/sentinal-consulting.svg"
+              alt="sentinal-consulting"
+            />
           </div>
           <div className="flex items-center justify-center">
-            <img src="./images/partners/happy-home.svg" alt="" />
+            <img src="./images/partners/happy-home.svg" alt="happy-home" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="./images/partners/for-sale.svg" alt="" />
+            <img src="./images/partners/for-sale.svg" alt="for-sale" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="./images/partners/sunset-realty.svg" alt="" />
+            <img
+              src="./images/partners/sunset-realty.svg"
+              alt="sunset-realty"
+            />
           </div>
         </div>
       </div>

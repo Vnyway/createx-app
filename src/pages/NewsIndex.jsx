@@ -8,7 +8,6 @@ import DiscussDetils from "../components/general-components/DiscussDetails";
 const NewsIndex = () => {
   const { newsId } = useParams();
   const shownInfo = news.find((element) => element.id === newsId - 1);
-  console.log(shownInfo);
   return (
     <main>
       <NewsTopSection

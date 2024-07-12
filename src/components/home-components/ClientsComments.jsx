@@ -35,7 +35,7 @@ const comments = [
 const Comments = () => {
   return comments.map((element) => {
     return (
-      <div className="flex flex-col w-full shrink-0">
+      <div key={element.id} className="flex flex-col w-full shrink-0">
         <img
           src={element.img}
           className="size-[72px] mb-[20px]"
@@ -148,7 +148,7 @@ const ClientsComments = () => {
             </div>
           </div>
           <div>
-            <img src="./images/partners/partnership.svg" alt="" />
+            <img src="./images/partners/partnership.svg" alt="partnership" />
           </div>
         </div>
       </div>

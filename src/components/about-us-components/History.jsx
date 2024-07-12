@@ -60,8 +60,8 @@ const history = [
 
 const HistoryComponents = () => {
   return history.map((element) => (
-    <div id={element.id} className="w-full shrink-0 flex flex-col gap-[20px] ">
-      <img src={element.image} alt={`image${element.id}`} />
+    <div key={element.id} className="w-full shrink-0 flex flex-col gap-[20px] ">
+      <img src={element.image} alt={`${element.id}`} />
       <p className="font-[400] text-[16px] text-[#424451]">
         {element.description}
       </p>
@@ -71,7 +71,7 @@ const HistoryComponents = () => {
 
 const HistoryLi = ({ id, text, historyIndex, setHistoryIndex }) => {
   return (
-    <li className="relative">
+    <li className="relative" key={id}>
       <span
         style={{ transition: "all ease-in-out 1s " }}
         className={`size-[8px] absolute top-[50%] translate-y-[-50%] left-[-3px] shrink-0 rounded-full ${

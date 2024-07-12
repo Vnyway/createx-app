@@ -120,7 +120,7 @@ const Features = () => {
           className="md:absolute top-[100px] w-full md:w-auto"
         />
         <div className="rounded-[4px] shadow-md bg-white flex flex-col md:flex-row items-start gap-[5px] md:gap-[20px] w-full md:w-[60%] md:absolute md:right-0 md:top-0 p-[15px] md:p-[40px]">
-          <img src="./images/about-us/braces.svg" alt="" />
+          <img src="./images/about-us/braces.svg" alt="braces" />
           <div className="flex flex-col gap-[30px]">
             <div className="font-[700] text-heading text-[16px] md:text-[20px] flex flex-col gap-[10px] md:gap-[20px]">
               <p>

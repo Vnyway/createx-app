@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 const team = [
   {
@@ -66,11 +64,10 @@ const Team = () => {
         </p>
         <div className="grid gap-[15px] grid-cols-2 md:grid-cols-4">
           {team.map((element) => (
-            <motion.div
-              initial="initial"
-              whileHover="hover"
+            <div
               className="text-center pb-[10px]"
-              id={element.id}>
+              id={element.id}
+              key={element.id}>
               <img src={element.image} alt={element.heading} />
 
               <h3 className="font-[700] text-[18px] md:text-[20px] text-heading pt-[10px]">
@@ -79,7 +76,7 @@ const Team = () => {
               <span className="font-[400] text-[14px] md:text-[16px] text-paragraph ">
                 {element.span}
               </span>
-            </motion.div>
+            </div>
           ))}
         </div>
         <p className="font-[400] text-[16px] md:text-[18px] text-heading text-center">

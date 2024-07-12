@@ -36,7 +36,7 @@ const VideoSection = () => {
           }`}>
           <img
             src="./images/play.svg"
-            alt=""
+            alt="play"
             className="absolute size-[15px] md:size-auto left-[50%] top-[50%] translate-x-[-45%] translate-y-[-50%]"
           />
         </button>

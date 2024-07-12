@@ -56,7 +56,7 @@ const RecentNews = ({
     initial="initial"
     whileHover="hover"
     className="flex flex-col cursor-pointer rounded-[4px] h-full shadow-md bg-white">
-    <img src={img} alt="" />
+    <img src={img} alt={h3} />
     <div className="flex flex-col gap-[10px] my-[20px] mx-[20px]">
       <motion.h3
         variants={{
@@ -84,7 +84,7 @@ const FactsAndNewsSection = () => {
       <img
         src="./images/facts-and-news/background.svg"
         className="w-[1065.95px] h-auto absolute -z-20 left-[-300px] top-[-380px]"
-        alt=""
+        alt="background"
       />
       <div className="container mx-auto my-[40px] md:my-[80px]">
         <div className="flex flex-col items-center text-heading">
@@ -98,7 +98,7 @@ const FactsAndNewsSection = () => {
                 <img
                   className="absolute -z-10"
                   src="./images/facts-and-news/ellipse-yellow.svg"
-                  alt=""
+                  alt="ellipse-yellow"
                 />
                 <h4 className="font-[700] text-[32px]">98%</h4>
               </div>
@@ -112,7 +112,7 @@ const FactsAndNewsSection = () => {
                 <img
                   className="absolute -z-10"
                   src="./images/facts-and-news/ellipse-red.svg"
-                  alt=""
+                  alt="ellipse-red"
                 />
                 <h4 className="font-[700] text-[32px]">20</h4>
               </div>
@@ -126,7 +126,7 @@ const FactsAndNewsSection = () => {
                 <img
                   className="absolute -z-10"
                   src="./images/facts-and-news/ellipse-blue.svg"
-                  alt=""
+                  alt="ellipse-blue"
                 />
                 <h4 className="font-[700] text-[32px]">9452</h4>
               </div>

@@ -9,7 +9,7 @@ const Header = () => {
       <Link to="/">
         <motion.img
           src="/images/logo.svg"
-          alt=""
+          alt="logo"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.3 }}
@@ -56,7 +56,7 @@ const Header = () => {
       </nav>
       <div className="group gap-[30px] hidden lg:flex">
         <Link to="/contacts" className="flex gap-[10px]">
-          <img src="/images/phone.svg" alt="" />
+          <img src="/images/phone.svg" alt="phone" />
           <motion.div
             whileHover={{ color: "#FF5A30", transition: { duration: 0.3 } }}
             className="flex flex-col">
@@ -67,7 +67,7 @@ const Header = () => {
           </motion.div>
         </Link>
         <Link to="/contacts" className="flex gap-[10px]">
-          <img src="/images/chat.svg" alt="" />
+          <img src="/images/chat.svg" alt="chat" />
           <motion.div
             whileHover={{ color: "#FF5A30", transition: { duration: 0.3 } }}
             className="flex flex-col">

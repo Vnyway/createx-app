@@ -1,62 +1,223 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-const projects = [
+export const projects = [
   {
     id: 1,
-    image: "./images/work/projects/cubes-building.svg",
+    image: "/images/work/projects/cubes-building.svg",
     heading: "Cubes Building",
     span: "Business Centers",
     categories: ["construction", "project development", "repairs"],
+    goal: [
+      "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+      "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+    ],
+    details: [
+      { name: "location", value: "2464 Royal Ln. Mesa, New Jersey" },
+      { name: "client", value: "Darlene Robertson" },
+      { name: "architect", value: "HIK Architecture" },
+      { name: "size", value: "840 sq. feet" },
+      { name: "value", value: "$2 million" },
+      { name: "completed", value: "May 2020" },
+    ],
+    desicions: [
+      "Vitae ultrices ornare eu sed in est quisque duis id.",
+      "A fermentum in morbi pretium aliquam adipiscing donec tempus.",
+      "Mauris odio pellentesque commodo, diam.",
+      "Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.",
+      "At pharetra libero blandit risus, fringilla sed commodo diam.",
+      "Integer ultricies viverra ut enim viverra ut.",
+    ],
   },
   {
     id: 2,
-    image: "./images/work/projects/cottage.svg",
+    image: "/images/work/projects/cottage.svg",
     heading: "Modern Cottage",
     span: "Private houses",
     categories: ["project development", "interior design", "repairs"],
+    goal: [
+      "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+      "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+    ],
+    details: [
+      { name: "location", value: "2464 Royal Ln. Mesa, New Jersey" },
+      { name: "client", value: "Darlene Robertson" },
+      { name: "architect", value: "HIK Architecture" },
+      { name: "size", value: "840 sq. feet" },
+      { name: "value", value: "$2 million" },
+      { name: "completed", value: "May 2020" },
+    ],
+    desicions: [
+      "Vitae ultrices ornare eu sed in est quisque duis id.",
+      "A fermentum in morbi pretium aliquam adipiscing donec tempus.",
+      "Mauris odio pellentesque commodo, diam.",
+      "Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.",
+      "At pharetra libero blandit risus, fringilla sed commodo diam.",
+      "Integer ultricies viverra ut enim viverra ut.",
+    ],
   },
   {
     id: 3,
-    image: "./images/work/projects/beach-house.svg",
+    image: "/images/work/projects/beach-house.svg",
     heading: "Luxury Beach House",
     span: "Private houses",
     categories: ["construction", "interior design", "repairs"],
+    goal: [
+      "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+      "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+    ],
+    details: [
+      { name: "location", value: "2464 Royal Ln. Mesa, New Jersey" },
+      { name: "client", value: "Darlene Robertson" },
+      { name: "architect", value: "HIK Architecture" },
+      { name: "size", value: "840 sq. feet" },
+      { name: "value", value: "$2 million" },
+      { name: "completed", value: "May 2020" },
+    ],
+    desicions: [
+      "Vitae ultrices ornare eu sed in est quisque duis id.",
+      "A fermentum in morbi pretium aliquam adipiscing donec tempus.",
+      "Mauris odio pellentesque commodo, diam.",
+      "Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.",
+      "At pharetra libero blandit risus, fringilla sed commodo diam.",
+      "Integer ultricies viverra ut enim viverra ut.",
+    ],
   },
   {
     id: 4,
-    image: "./images/work/projects/double-bedroom.svg",
+    image: "/images/work/projects/double-bedroom.svg",
     heading: "Double Bedroom",
     span: "Apartments & flats",
     categories: ["project development", "interior design"],
+    goal: [
+      "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+      "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+    ],
+    details: [
+      { name: "location", value: "2464 Royal Ln. Mesa, New Jersey" },
+      { name: "client", value: "Darlene Robertson" },
+      { name: "architect", value: "HIK Architecture" },
+      { name: "size", value: "840 sq. feet" },
+      { name: "value", value: "$2 million" },
+      { name: "completed", value: "May 2020" },
+    ],
+    desicions: [
+      "Vitae ultrices ornare eu sed in est quisque duis id.",
+      "A fermentum in morbi pretium aliquam adipiscing donec tempus.",
+      "Mauris odio pellentesque commodo, diam.",
+      "Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.",
+      "At pharetra libero blandit risus, fringilla sed commodo diam.",
+      "Integer ultricies viverra ut enim viverra ut.",
+    ],
   },
   {
     id: 5,
-    image: "./images/work/projects/kids-bedroom.svg",
+    image: "/images/work/projects/kids-bedroom.svg",
     heading: "Kids Bedroom",
     span: "Apartments & flats",
     categories: ["project development", "interior design", "repairs"],
+    goal: [
+      "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+      "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+    ],
+    details: [
+      { name: "location", value: "2464 Royal Ln. Mesa, New Jersey" },
+      { name: "client", value: "Darlene Robertson" },
+      { name: "architect", value: "HIK Architecture" },
+      { name: "size", value: "840 sq. feet" },
+      { name: "value", value: "$2 million" },
+      { name: "completed", value: "May 2020" },
+    ],
+    desicions: [
+      "Vitae ultrices ornare eu sed in est quisque duis id.",
+      "A fermentum in morbi pretium aliquam adipiscing donec tempus.",
+      "Mauris odio pellentesque commodo, diam.",
+      "Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.",
+      "At pharetra libero blandit risus, fringilla sed commodo diam.",
+      "Integer ultricies viverra ut enim viverra ut.",
+    ],
   },
   {
     id: 6,
-    image: "./images/work/projects/red-finger.svg",
+    image: "/images/work/projects/red-finger.svg",
     heading: "Red Finger Building",
     span: "Business Centers",
     categories: ["construction", "project development"],
+    goal: [
+      "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+      "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+    ],
+    details: [
+      { name: "location", value: "2464 Royal Ln. Mesa, New Jersey" },
+      { name: "client", value: "Darlene Robertson" },
+      { name: "architect", value: "HIK Architecture" },
+      { name: "size", value: "840 sq. feet" },
+      { name: "value", value: "$2 million" },
+      { name: "completed", value: "May 2020" },
+    ],
+    desicions: [
+      "Vitae ultrices ornare eu sed in est quisque duis id.",
+      "A fermentum in morbi pretium aliquam adipiscing donec tempus.",
+      "Mauris odio pellentesque commodo, diam.",
+      "Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.",
+      "At pharetra libero blandit risus, fringilla sed commodo diam.",
+      "Integer ultricies viverra ut enim viverra ut.",
+    ],
   },
   {
     id: 7,
-    image: "./images/work/projects/scandinavian-interior.svg",
+    image: "/images/work/projects/scandinavian-interior.svg",
     heading: "Scandinavian Interior",
     span: "Private houses",
     categories: ["project development", "interior design", "repairs"],
+    goal: [
+      "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+      "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+    ],
+    details: [
+      { name: "location", value: "2464 Royal Ln. Mesa, New Jersey" },
+      { name: "client", value: "Darlene Robertson" },
+      { name: "architect", value: "HIK Architecture" },
+      { name: "size", value: "840 sq. feet" },
+      { name: "value", value: "$2 million" },
+      { name: "completed", value: "May 2020" },
+    ],
+    desicions: [
+      "Vitae ultrices ornare eu sed in est quisque duis id.",
+      "A fermentum in morbi pretium aliquam adipiscing donec tempus.",
+      "Mauris odio pellentesque commodo, diam.",
+      "Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.",
+      "At pharetra libero blandit risus, fringilla sed commodo diam.",
+      "Integer ultricies viverra ut enim viverra ut.",
+    ],
   },
   {
     id: 8,
-    image: "./images/work/projects/painted-house.svg",
+    image: "/images/work/projects/painted-house.svg",
     heading: "Painted House",
     span: "Private houses",
     categories: ["construction", "interior design", "repairs"],
+    goal: [
+      "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+      "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+    ],
+    details: [
+      { name: "location", value: "2464 Royal Ln. Mesa, New Jersey" },
+      { name: "client", value: "Darlene Robertson" },
+      { name: "architect", value: "HIK Architecture" },
+      { name: "size", value: "840 sq. feet" },
+      { name: "value", value: "$2 million" },
+      { name: "completed", value: "May 2020" },
+    ],
+    desicions: [
+      "Vitae ultrices ornare eu sed in est quisque duis id.",
+      "A fermentum in morbi pretium aliquam adipiscing donec tempus.",
+      "Mauris odio pellentesque commodo, diam.",
+      "Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.",
+      "At pharetra libero blandit risus, fringilla sed commodo diam.",
+      "Integer ultricies viverra ut enim viverra ut.",
+    ],
   },
 ];
 
@@ -325,12 +486,12 @@ const WorkExamplesSection = ({ id }) => {
               <motion.div
                 initial="initial"
                 whileHover="hover"
-                id={element.id}
+                key={element.id}
                 className="flex flex-col">
                 <img
                   src={element.image}
                   className="w-full object-cover"
-                  alt=""
+                  alt={element.heading}
                 />
                 <motion.div
                   variants={{
@@ -351,17 +512,20 @@ const WorkExamplesSection = ({ id }) => {
                   <span className="font-[400] text-[14px] text-paragraph">
                     {element.span}
                   </span>
-
-                  <motion.button
-                    initial={{ color: "#FF5A30", backgroundColor: "#FFFFFF" }}
-                    whileHover={{
-                      color: "#FFFFFF",
-                      backgroundColor: "#FF5A30",
-                      transition: { duration: 0.3 },
-                    }}
-                    className="uppercase font-[700] text-[14px] px-[32px] my-[10px] py-[10px] border-[1px] border-primary rounded-[4px]">
-                    View Project
-                  </motion.button>
+                  <Link
+                    to={`/work/${element.id}`}
+                    onClick={() => window.scrollTo(0, 0)}>
+                    <motion.button
+                      initial={{ color: "#FF5A30", backgroundColor: "#FFFFFF" }}
+                      whileHover={{
+                        color: "#FFFFFF",
+                        backgroundColor: "#FF5A30",
+                        transition: { duration: 0.3 },
+                      }}
+                      className="uppercase font-[700] text-[14px] px-[32px] my-[10px] py-[10px] border-[1px] border-primary rounded-[4px]">
+                      View Project
+                    </motion.button>
+                  </Link>
                 </motion.div>
               </motion.div>
             );

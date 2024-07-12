@@ -26,7 +26,7 @@ const NewsDetails = ({ id, details }) => {
   return (
     <section className="mt-[-60px] md:mt-[-80px]">
       <div className="container mx-auto flex flex-col gap-[60px]">
-        <img src={`/images/news/news${id + 1}.svg`} alt="" />
+        <img src={`/images/news/news${id + 1}.svg`} alt={`news${id + 1}`} />
         <div className="md:px-[10%] flex flex-col gap-[30px] font-[400] text-[16px] text-customGray">
           <h3 className="font-[700] text-[17px] md:text-[20px] text-heading">
             {details.boldParagraph}
@@ -46,8 +46,8 @@ const NewsDetails = ({ id, details }) => {
           <p>{details.paragraphs[2]}</p>
           <ul className="flex flex-col gap-[10px]">
             {details.list.map((element, index) => (
-              <div id={index} className="flex items-center gap-[15px]">
-                <img src="/images/news/check.svg" alt="" />
+              <div key={index} className="flex items-center gap-[15px]">
+                <img src="/images/news/check.svg" alt="check" />
                 <p>{element}</p>
               </div>
             ))}
@@ -136,7 +136,9 @@ const NewsDetails = ({ id, details }) => {
                 options
               );
               return (
-                <div className="w-full flex flex-col md:flex-row gap-[15px] md:gap-[1%]">
+                <div
+                  key={element.id}
+                  className="w-full flex flex-col md:flex-row gap-[15px] md:gap-[1%]">
                   <div className="w-full md:w-[30%] flex flex-col gap-[5px]">
                     <h4 className="font-[700] text-[18px] text-heading">
                       {element.author}

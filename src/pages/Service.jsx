@@ -7,6 +7,7 @@ import SelectedProjectsSection from "../components/general-components/SelectedPr
 import Pricing from "../components/service-info-components/Pricing";
 import SupportedSection from "../components/general-components/SupportedSection";
 import DiscussDetails from "../components/general-components/DiscussDetails";
+import { projects } from "../components/work-components/WorkExamplesSection";
 
 const services = [
   {
@@ -403,48 +404,12 @@ const features = [
   },
 ];
 
-const projects = [
-  {
-    id: 1,
-    image: "./images/service/projects/kids-bedroom.svg",
-    h4: "Scandinavian Interior",
-    span: "Private houses",
-  },
-  {
-    id: 2,
-    image: "./images/service/projects/scandinavian-interior.svg",
-    h4: "Kids Bedroom",
-    span: "Apartments & flats",
-  },
-  {
-    id: 3,
-    image: "./images/service/projects/kids-bedroom.svg",
-    h4: "Scandinavian Interior",
-    span: "Private houses",
-  },
-  {
-    id: 4,
-    image: "./images/service/projects/scandinavian-interior.svg",
-    h4: "Kids Bedroom",
-    span: "Apartments & flats",
-  },
-  {
-    id: 5,
-    image: "./images/service/projects/kids-bedroom.svg",
-    h4: "Scandinavian Interior",
-    span: "Private houses",
-  },
-  {
-    id: 6,
-    image: "./images/service/projects/scandinavian-interior.svg",
-    h4: "Kids Bedroom",
-    span: "Apartments & flats",
-  },
-];
-
 const Service = () => {
   const { serviceId } = useParams();
   const data = services.find((element) => element.id === Number(serviceId));
+  const shownProjects = projects.filter((project) =>
+    project.categories.find((category) => category === data.name.toLowerCase())
+  );
   return (
     <main>
       <PageTopSection
@@ -467,7 +432,7 @@ const Service = () => {
       />
       <SelectedProjectsSection
         heading="Related projects"
-        projects={projects}
+        projects={shownProjects}
         marginTop={true}
       />
       <Pricing />

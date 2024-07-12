@@ -13,7 +13,7 @@ const Pricing = () => {
       <img
         src="./images/facts-and-news/background.svg"
         className="w-[1065.95px] h-auto absolute -z-10 left-[-300px] top-[-380px]"
-        alt=""
+        alt="background"
       />
       <div className="container mx-auto py-[60px] ">
         <div className="flex flex-col gap-[10px] text-center pb-[60px]">
@@ -51,17 +51,17 @@ const Pricing = () => {
               <td className="text-left pl-[40px]">Installation plan</td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
             </tr>
@@ -71,17 +71,17 @@ const Pricing = () => {
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
             </tr>
@@ -89,17 +89,17 @@ const Pricing = () => {
               <td className="text-left pl-[40px]">Lighting plan</td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
             </tr>
@@ -107,17 +107,17 @@ const Pricing = () => {
               <td className="text-left pl-[40px]">Flooring plan</td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
             </tr>
@@ -127,17 +127,17 @@ const Pricing = () => {
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
             </tr>
@@ -147,17 +147,17 @@ const Pricing = () => {
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
             </tr>
@@ -172,12 +172,12 @@ const Pricing = () => {
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
             </tr>
@@ -193,7 +193,7 @@ const Pricing = () => {
               </td>
               <td>
                 <div className="flex justify-center items-center py-[10px]">
-                  <img src="./images/service/check.svg" alt="" />
+                  <img src="./images/service/check.svg" alt="check" />
                 </div>
               </td>
             </tr>

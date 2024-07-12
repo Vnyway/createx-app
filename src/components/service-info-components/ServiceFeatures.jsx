@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const ServiceFeatures = ({ data, descriptionOpened, setDescriptionOpened }) => {
@@ -10,9 +10,11 @@ const ServiceFeatures = ({ data, descriptionOpened, setDescriptionOpened }) => {
     }
   };
 
-  return data.slider.map((element) => {
+  return data.slider.map((element, index) => {
     return (
-      <div className="w-full shrink-0 flex flex-col md:flex-row gap-[20px] md:gap-[60px]">
+      <div
+        key={index}
+        className="w-full shrink-0 flex flex-col md:flex-row gap-[20px] md:gap-[60px]">
         <img
           onDragStart={(e) => e.preventDefault()}
           src={element.image}
@@ -23,9 +25,9 @@ const ServiceFeatures = ({ data, descriptionOpened, setDescriptionOpened }) => {
           <h2 className="font-[700] text-[30px] md:text-[46px] text-heading">
             We offer
           </h2>
-          {element.offerings.map((offering) => {
+          {element.offerings.map((offering, index) => {
             return (
-              <div className="flex items-start gap-[20px]">
+              <div key={index} className="flex items-start gap-[20px]">
                 <button
                   onClick={() => handleToggle(offering.id)}
                   className="relative size-[22px] shrink-0 mt-[5px] md:mt-[10px]">
@@ -76,7 +78,7 @@ const ServiceFeatures = ({ data, descriptionOpened, setDescriptionOpened }) => {
                         : "grid-rows-[0fr]"
                     } `}>
                     <p
-                      className={` font-[400] overflow-hidden text-[12px] md:text-[16px] text-paragraph`}>
+                      className={`font-[400] overflow-hidden text-[12px] md:text-[16px] text-paragraph`}>
                       {offering.description}
                     </p>
                   </div>

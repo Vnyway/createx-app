@@ -10,6 +10,7 @@ import Footer from "./components/footer/Footer";
 import Service from "./pages/Service";
 import Positions from "./pages/Positions";
 import NewsIndex from "./pages/NewsIndex";
+import Project from "./pages/Project";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/:serviceId" element={<Service />} />
         <Route path="/positions" element={<Positions />} />
         <Route path="/news/:newsId" element={<NewsIndex />} />
+        <Route path="/work/:projectId" element={<Project />} />
       </Routes>
       <Footer />
     </BrowserRouter>

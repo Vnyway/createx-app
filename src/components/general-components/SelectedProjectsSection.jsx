@@ -8,9 +8,14 @@ const SelectedProjects = ({ projects }) =>
     <motion.div
       initial="initial"
       whileHover="hover"
+      key={element.id}
       id={element.id}
       className="flex flex-col w-full md:w-1/3 px-[1%] shrink-0">
-      <img src={element.image} className="w-full object-cover" alt="" />
+      <img
+        src={element.image}
+        className="w-full object-cover"
+        alt={`${element.id}`}
+      />
       <motion.div
         variants={{
           initial: { height: "80px", marginTop: 0 },
@@ -21,20 +26,26 @@ const SelectedProjects = ({ projects }) =>
           },
         }}
         className="flex flex-col gap-[5px] items-center py-[15px] bg-white shadow-md mb-[5px] h-[80px] overflow-y-hidden">
-        <h4 className="font-[700] text-[20px] text-heading">{element.h4}</h4>
+        <h4 className="font-[700] text-[20px] text-heading">
+          {element.heading}
+        </h4>
         <span className="font-[400] text-[14px] text-paragraph">
           {element.span}
         </span>
-        <motion.button
-          initial={{ color: "#FF5A30", backgroundColor: "#FFFFFF" }}
-          whileHover={{
-            color: "#FFFFFF",
-            backgroundColor: "#FF5A30",
-            transition: { duration: 0.3 },
-          }}
-          className="uppercase font-[700] text-[14px] px-[32px] my-[10px] py-[10px] border-[1px] border-primary rounded-[4px]">
-          View Project
-        </motion.button>
+        <Link
+          to={`/work/${element.id - 1}`}
+          onClick={() => window.scrollTo(0, 0)}>
+          <motion.button
+            initial={{ color: "#FF5A30", backgroundColor: "#FFFFFF" }}
+            whileHover={{
+              color: "#FFFFFF",
+              backgroundColor: "#FF5A30",
+              transition: { duration: 0.3 },
+            }}
+            className="uppercase font-[700] text-[14px] px-[32px] my-[10px] py-[10px] border-[1px] border-primary rounded-[4px]">
+            View Project
+          </motion.button>
+        </Link>
       </motion.div>
     </motion.div>
   ));
@@ -130,7 +141,12 @@ const SelectedProjectsSection = ({ heading, projects, marginTop }) => {
                 variants={{
                   initial: { fill: "#424551" },
                   hover: {
-                    fill: projectIndex < 3 ? "#FFFFFF" : "#424551",
+                    fill:
+                      (screenSize >= 768 &&
+                        projectIndex < projects.length - 3) ||
+                      (screenSize < 768 && projectIndex < projects.length - 1)
+                        ? "#FFFFFF"
+                        : "#424551",
                     transition: { duration: 0.3 },
                   },
                 }}

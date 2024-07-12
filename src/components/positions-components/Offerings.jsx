@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Newsletter from "./Newsletter";
 import CV from "./CV";
@@ -40,18 +41,19 @@ const Offerings = () => {
         <div className="flex flex-col gap-[20px] w-full md:w-[60%]">
           {offerings.map((element) => (
             <div
+              key={element.id}
               style={{ transition: "all ease-in-out .3s" }}
               className="py-[20px] px-[30px] flex flex-col gap-[15px] md:gap-0 md:flex-row md:justify-between md:items-center rounded-[4px] border-[1px] border-[#E5E8ED] shadow-sm hover:shadow-md">
               <div className="flex flex-col gap-[5px]">
                 <div className="flex gap-[10px] items-center">
                   <div className="flex gap-[3px]">
-                    <img src="./images/positions/location.svg" alt="" />
+                    <img src="./images/positions/location.svg" alt="location" />
                     <span className="font-[400] text-[14px] text-paragraph">
                       {element.location}
                     </span>
                   </div>
                   <div className="flex gap-[3px] border-l-[1px] border-[#787A80] pl-[10px] items-center">
-                    <img src="./images/positions/clock.svg" alt="" />
+                    <img src="./images/positions/clock.svg" alt="clock" />
                     <span className="font-[400] text-[14px] text-paragraph">
                       {element.workHours}
                     </span>
@@ -61,16 +63,18 @@ const Offerings = () => {
                   {element.job}
                 </h4>
               </div>
-              <motion.button
-                style={{ transition: "all ease-out .3s" }}
-                initial={{ color: "#FF5A30", backgroundColor: "#FFFFFF" }}
-                whileHover={{
-                  color: "#FFFFFF",
-                  backgroundColor: "#FF5A30",
-                }}
-                className="w-[151px] h-[44px]  font-[700] text-[14px] border-[1px] border-primary rounded-[4px] uppercase flex justify-center items-center">
-                Apply now
-              </motion.button>
+              <Link to={`/contacts`} onClick={() => window.scrollTo(0, 0)}>
+                <motion.button
+                  style={{ transition: "all ease-out .3s" }}
+                  initial={{ color: "#FF5A30", backgroundColor: "#FFFFFF" }}
+                  whileHover={{
+                    color: "#FFFFFF",
+                    backgroundColor: "#FF5A30",
+                  }}
+                  className="w-[151px] h-[44px]  font-[700] text-[14px] border-[1px] border-primary rounded-[4px] uppercase flex justify-center items-center">
+                  Apply now
+                </motion.button>
+              </Link>
             </div>
           ))}
         </div>

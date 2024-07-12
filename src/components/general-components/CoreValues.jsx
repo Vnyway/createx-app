@@ -63,11 +63,13 @@ const CoreValues = ({
             features.map((element) => {
               if (element.id % 2) {
                 return (
-                  <div className="flex flex-col items-center gap-[5px] md:gap-[10px] w-full md:w-[285px]">
+                  <div
+                    key={element.id}
+                    className="flex flex-col items-center gap-[5px] md:gap-[10px] w-full md:w-[285px]">
                     <img
                       src={element.image}
                       className="size-[40px] md:size-[48px]"
-                      alt=""
+                      alt={`${element.id}`}
                     />
                     <h3
                       className={`font-[700] text-[20px] ${
@@ -82,11 +84,13 @@ const CoreValues = ({
                 );
               } else {
                 return (
-                  <div className="flex flex-col items-center gap-[5px] md:gap-[10px] md:border-r-[1px] md:border-l-[1px] md:px-[30px] lg:px-[80px] w-[full] md:w-[345px] lg:w-[445px]">
+                  <div
+                    key={element.id}
+                    className="flex flex-col items-center gap-[5px] md:gap-[10px] md:border-r-[1px] md:border-l-[1px] md:px-[30px] lg:px-[80px] w-[full] md:w-[345px] lg:w-[445px]">
                     <img
                       src="./images/ic-hand.svg"
                       className="size-[40px] md:size-[48px]"
-                      alt=""
+                      alt={`${element.id}`}
                     />
                     <h3
                       className={`font-[700] text-[20px] ${

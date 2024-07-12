@@ -27,7 +27,7 @@ const NewsTopSection = ({ heading, category, date, comments }) => {
               {date}
             </span>
             <div className="flex items-center gap-[3px]">
-              <img src="/images/facts-and-news/comments.svg" alt="" />
+              <img src="/images/facts-and-news/comments.svg" alt="comments" />
               <span>
                 {comments} {comments === 1 ? "comment" : "comments"}
               </span>

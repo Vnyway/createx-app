@@ -1,5 +1,5 @@
 import React from "react";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Menu = () => {
@@ -11,7 +11,7 @@ const Menu = () => {
             <Link to="/">
               <motion.img
                 src="/images/logo.svg"
-                alt=""
+                alt="logo"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.3 }}
@@ -50,7 +50,7 @@ const Menu = () => {
               className="flex flex-col md:flex-row gap-[10px] py-[15px]">
               <img
                 src="/images/phone.svg"
-                alt=""
+                alt="phone"
                 className="w-[40px] md:w-auto"
               />
               <motion.div
@@ -69,7 +69,7 @@ const Menu = () => {
               className="flex flex-col md:flex-row gap-[10px] py-[15px]">
               <img
                 src="/images/chat.svg"
-                alt=""
+                alt="chat"
                 className="w-[40px] md:w-auto"
               />
               <motion.div

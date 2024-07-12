@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const LearnMore = ({ heading, button, link }) => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-[20px] md:gap-[40px] pt-[40px] md:pt-[80px]">
-      <h3 className="font-[700] text-[28px] text-heading">{heading}</h3>
+      <h3 className="font-[700] text-[28px] text-center md:text-start text-heading">
+        {heading}
+      </h3>
       <Link to={`/${link}`} onClick={() => window.scrollTo(0, 0)}>
         <motion.button
           initial="initial"

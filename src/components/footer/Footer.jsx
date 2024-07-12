@@ -29,7 +29,7 @@ const Footer = () => {
               <Link to="/">
                 <motion.img
                   src="/images/logo-white.svg"
-                  alt=""
+                  alt="logo"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   transition={{ duration: 0.3 }}

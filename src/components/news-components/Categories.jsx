@@ -221,7 +221,7 @@ const NewsCharacteristics = ({ category, date, comments }) => (
       {date}
     </span>
     <div className="flex items-center gap-[3px]">
-      <img src="./images/facts-and-news/comments.svg" alt="" />
+      <img src="./images/facts-and-news/comments.svg" alt="comments" />
       <span>
         {comments} {comments === 1 ? "comment" : "comments"}
       </span>
@@ -234,14 +234,14 @@ const RecentNews = ({ id, heading, category, date, comments, description }) => {
   const path = `/news/${newsId}`;
 
   return (
-    <Link to={path} onClick={() => window.scrollTo(0, 0)}>
+    <Link key={id} to={path} onClick={() => window.scrollTo(0, 0)}>
       <motion.div
         id={id}
         initial="initial"
         whileHover="hover"
         style={{ transition: "all ease-out .3s" }}
         className="flex flex-col cursor-pointer rounded-[4px] h-full shadow-md hover:shadow-lg bg-white">
-        <img src={`./images/news/news${id + 1}.svg`} alt="" />
+        <img src={`./images/news/news${id + 1}.svg`} alt={`news${id + 1}`} />
         <div className="flex flex-col gap-[10px] my-[20px] mx-[20px]">
           <motion.h3
             variants={{
@@ -333,6 +333,7 @@ const Categories = () => {
               className="absolute w-full md:w-1/6 h-[46px] rounded-[4px] border-[1px] border-primary"></motion.div>
             {categories.map((element) => (
               <button
+                key={element.id}
                 id={element.id}
                 style={{ transition: "all ease-out .5s" }}
                 onClick={() => setCategory(element.id)}

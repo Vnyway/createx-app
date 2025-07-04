@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Createx – Construction Company Website (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App Access
 
-## Available Scripts
+Access the app at: [https://createx-app.netlify.app/](https://createx-app.netlify.app/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Createx** is a modern, responsive website for a fictional construction company. This project implements the full front-end experience with dynamic routing, animated UI elements, and interactive forms using React and Tailwind CSS.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Website Pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Home** – Introduction, hero section, and key service highlights
+- **About Us** – Company history, mission, and team overview
+- **Services** – List of all services provided
+- **Service Details** – A deep dive into a specific service
+- **Projects** – Portfolio of completed or ongoing projects
+- **Careers** – Open job positions with application details
+- **Positions** – Specific roles and responsibilities
+- **News** – Company news, articles, and updates
+- **Single News** – A detailed view of a specific article
+- **Contacts** – Location, contact form, and direct communication options
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Single-Page Application (SPA)** with React and React Router
+- **Responsive Design** using Tailwind CSS
+- **Animated UI** using Framer Motion for smooth transitions
+- **Newsletter Form** – Subscribe to company updates
+- **Contact Form** – Send inquiries or messages directly
+- **Fully Modular Components** – Reusable design patterns
+- **Well-structured Routing** – Clean navigation between pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React** – Component-based UI library
+- **React Router DOM** – Navigation and routing between pages
+- **Tailwind CSS** – Utility-first CSS framework
+- **Framer Motion** – Smooth and interactive animations
+- **React Hook Form** – Easy-to-manage forms and validations
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+- Node.js (v16+ recommended)
+- npm or yarn
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repository:
 
-### Code Splitting
+   ```bash
+   git clone https://github.com/Vnyway/createx-app.git
+   cd createx-app
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm start
+   ```
+4. Open in browser::
+   ```bash
+   http://localhost:3000
+   ```
